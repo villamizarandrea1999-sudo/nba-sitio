@@ -254,3 +254,12 @@
     font-weight: 800;
     font-size: 18px;
 }
+.birthday-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    flex-shrink: 0;
+    object-fit: cover;
+    background: #e2e2e2;
+    border: 2px solid rgba(150, 73, 0, 0.2);
+}
