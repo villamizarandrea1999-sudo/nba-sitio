@@ -61,6 +61,7 @@
                 NBA GRID
             </div>
 <nav class="hidden md:flex items-center space-x-md">
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="#">NBA Today</a>
 <a class="font-label-caps text-label-caps text-primary border-b-4 border-primary pb-2 transition-colors duration-200" href="#">Scores</a>
 <a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="#">Teams</a>
 <a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="#">Stats</a>
@@ -136,34 +137,44 @@
 </section>
 <!-- NBA Connections-style Daily Grid -->
 <section class="mb-xl">
-<div class="flex items-end justify-between mb-lg border-b-2 border-on-surface pb-xs">
-<h2 class="font-display-lg text-headline-lg uppercase italic tracking-tighter">THE DAILY GRID</h2>
-<div class="font-label-caps text-primary hidden md:block">FIND FOUR GROUPS OF FOUR</div>
+<div class="daily-grid-shell relative overflow-hidden rounded-3xl p-md md:p-lg">
+<div class="daily-grid-glow"></div>
+<div class="relative flex items-end justify-between mb-lg">
+<div>
+<span class="font-label-caps text-primary-fixed text-[11px] tracking-widest opacity-80">DAILY PUZZLE · NO. 042</span>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase italic tracking-tighter text-white mt-1">THE DAILY GRID</h2>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter">
+<div class="hidden md:flex items-center gap-2 font-label-caps text-[11px] text-white/60">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+FIND FOUR GROUPS OF FOUR
+</div>
+</div>
+<div class="relative grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter">
 <div class="lg:col-span-3 flex flex-col justify-center">
-<h3 class="font-label-caps text-primary mb-xs">TODAY'S PUZZLE</h3>
-<p class="font-headline-md text-headline-md uppercase italic leading-none mb-sm">CREATE FOUR GROUPS OF FOUR!</p>
-<p class="text-on-surface-variant text-body-md mb-md">Select four items you think share a category, then hit submit. Categories range from easy (yellow) to tricky (purple).</p>
+<p class="font-headline-md text-headline-md uppercase italic leading-none mb-sm text-white">CREATE FOUR GROUPS OF FOUR!</p>
+<p class="text-white/60 text-body-md mb-md">Select four items you think share a category, then hit submit. Categories range from easy (yellow) to tricky (purple).</p>
 <div class="flex items-center space-x-xs mb-md">
-<span class="font-label-caps text-xs text-on-surface-variant">MISTAKES REMAINING:</span>
+<span class="font-label-caps text-xs text-white/50">MISTAKES REMAINING:</span>
 <div id="grid-mistakes" class="flex space-x-1">
-<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
-<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
-<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
-<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary-fixed inline-block transition-opacity duration-300"></span>
+<span class="w-3 h-3 rounded-full bg-primary-fixed inline-block transition-opacity duration-300"></span>
+<span class="w-3 h-3 rounded-full bg-primary-fixed inline-block transition-opacity duration-300"></span>
+<span class="w-3 h-3 rounded-full bg-primary-fixed inline-block transition-opacity duration-300"></span>
 </div>
 </div>
-<div class="flex space-x-xs">
-<button id="grid-shuffle" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">SHUFFLE</button>
-<button id="grid-deselect" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">DESELECT</button>
-<button id="grid-submit" class="bg-primary text-on-primary font-label-caps text-xs px-sm py-xs hard-shadow hard-shadow-hover transition-all">SUBMIT</button>
+<div class="flex flex-wrap gap-2">
+<button id="grid-shuffle" class="daily-grid-btn-ghost">
+<span class="material-symbols-outlined text-[16px]">shuffle</span>SHUFFLE</button>
+<button id="grid-deselect" class="daily-grid-btn-ghost">
+<span class="material-symbols-outlined text-[16px]">close</span>DESELECT</button>
+<button id="grid-submit" class="daily-grid-btn-primary">SUBMIT</button>
 </div>
-<p id="grid-status" class="font-label-caps text-xs text-primary mt-md h-4"></p>
+<p id="grid-status" class="font-label-caps text-xs text-primary-fixed mt-md h-4"></p>
 </div>
 <div class="lg:col-span-9">
 <div id="grid-solved" class="flex flex-col space-y-2 mb-2"></div>
-<div id="nba-grid" class="grid grid-cols-2 md:grid-cols-4 gap-2"></div>
+<div id="nba-grid" class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3"></div>
+</div>
 </div>
 </div>
 </section>
