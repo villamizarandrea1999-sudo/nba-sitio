@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NBA Today | NBA GRID</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=JetBrains+Mono:wght@400;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../style.css"/>
+<script id="tailwind-config" src="../tailwind-config.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Header Navigation -->
+<header class="bg-on-surface sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-grid-margin py-xs max-w-container-max mx-auto">
+<a href="../index.html" class="font-display-lg text-display-lg font-extrabold text-primary uppercase tracking-tighter">
+                NBA GRID
+            </a>
+<nav class="hidden md:flex items-center space-x-md">
+<a class="font-label-caps text-label-caps text-primary border-b-4 border-primary pb-2 transition-colors duration-200" href="index.html">NBA Today</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../index.html#">Scores</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../index.html#">Teams</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../index.html#">Stats</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../index.html#">News</a>
+</nav>
+<div class="flex items-center space-x-sm">
+<button class="text-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-grid-margin py-md">
+<!-- Page Header -->
+<section class="mb-xl">
+<span class="font-label-caps text-primary text-[11px] tracking-widest">UPDATED DAILY</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase italic tracking-tighter mt-1 mb-sm">NBA TODAY</h1>
+<p class="text-on-surface-variant text-body-lg max-w-2xl">A living hub of sections that refresh every day — birthdays, milestones, transactions, and more. Pick a section below.</p>
+</section>
+<!-- Sections Grid -->
+<section class="mb-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-grid-gutter">
+<a href="birthdays.html" class="today-card group">
+<div class="today-card-icon">
+<span class="material-symbols-outlined">cake</span>
+</div>
+<span class="font-label-caps text-xs text-primary mb-xs block">DAILY · BIRTHDAYS</span>
+<h3 class="font-headline-md text-[22px] mb-sm uppercase leading-tight group-hover:text-primary transition-colors">NBA Players Birthday Today</h3>
+<p class="text-on-surface-variant text-body-md">See every current and former NBA player celebrating a birthday today.</p>
+<span class="today-card-cta">VIEW SECTION <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span></span>
+</a>
+<div class="today-card today-card-soon">
+<div class="today-card-icon">
+<span class="material-symbols-outlined">military_tech</span>
+</div>
+<span class="font-label-caps text-xs text-primary mb-xs block">DAILY · MILESTONES</span>
+<h3 class="font-headline-md text-[22px] mb-sm uppercase leading-tight">On This Day</h3>
+<p class="text-on-surface-variant text-body-md">Historic NBA records, trades, and moments that happened on today's date.</p>
+<span class="today-card-cta opacity-50">COMING SOON</span>
+</div>
+<div class="today-card today-card-soon">
+<div class="today-card-icon">
+<span class="material-symbols-outlined">swap_horiz</span>
+</div>
+<span class="font-label-caps text-xs text-primary mb-xs block">DAILY · TRANSACTIONS</span>
+<h3 class="font-headline-md text-[22px] mb-sm uppercase leading-tight">Latest Transactions</h3>
+<p class="text-on-surface-variant text-body-md">Trades, signings, and roster moves from around the league.</p>
+<span class="today-card-cta opacity-50">COMING SOON</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-surface text-surface border-t-2 border-primary mt-xl">
+<div class="w-full py-lg px-grid-margin mt-xl flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
+<div class="mb-md md:mb-0">
+<div class="text-headline-md font-headline-md text-primary uppercase">NBA GRID</div>
+<p class="font-label-caps text-[10px] text-surface-variant/60 mt-xs">© 2024 NBA GRID. PRECISION ENGINEERED SPORTS JOURNALISM.</p>
+</div>
+<div class="flex space-x-md font-label-caps text-xs">
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../index.html#">About</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../index.html#">Staff</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../index.html#">Privacy</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../index.html#">Terms</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../index.html#">API</a>
+</div>
+</div>
+<div class="h-1 bg-gradient-to-r from-primary via-on-primary-container to-primary w-full opacity-50"></div>
+</footer>
+</body></html>
