@@ -134,6 +134,39 @@
 </div>
 </div>
 </section>
+<!-- NBA Connections-style Daily Grid -->
+<section class="mb-xl">
+<div class="flex items-end justify-between mb-lg border-b-2 border-on-surface pb-xs">
+<h2 class="font-display-lg text-headline-lg uppercase italic tracking-tighter">THE DAILY GRID</h2>
+<div class="font-label-caps text-primary hidden md:block">FIND FOUR GROUPS OF FOUR</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter">
+<div class="lg:col-span-3 flex flex-col justify-center">
+<h3 class="font-label-caps text-primary mb-xs">TODAY'S PUZZLE</h3>
+<p class="font-headline-md text-headline-md uppercase italic leading-none mb-sm">CREATE FOUR GROUPS OF FOUR!</p>
+<p class="text-on-surface-variant text-body-md mb-md">Select four items you think share a category, then hit submit. Categories range from easy (yellow) to tricky (purple).</p>
+<div class="flex items-center space-x-xs mb-md">
+<span class="font-label-caps text-xs text-on-surface-variant">MISTAKES REMAINING:</span>
+<div id="grid-mistakes" class="flex space-x-1">
+<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+</div>
+</div>
+<div class="flex space-x-xs">
+<button id="grid-shuffle" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">SHUFFLE</button>
+<button id="grid-deselect" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">DESELECT</button>
+<button id="grid-submit" class="bg-primary text-on-primary font-label-caps text-xs px-sm py-xs hard-shadow hard-shadow-hover transition-all">SUBMIT</button>
+</div>
+<p id="grid-status" class="font-label-caps text-xs text-primary mt-md h-4"></p>
+</div>
+<div class="lg:col-span-9">
+<div id="grid-solved" class="flex flex-col space-y-2 mb-2"></div>
+<div id="nba-grid" class="grid grid-cols-2 md:grid-cols-4 gap-2"></div>
+</div>
+</div>
+</section>
 <!-- Secondary Grid News -->
 <section class="mb-xl">
 <div class="flex items-end justify-between mb-lg border-b-2 border-on-surface pb-xs">

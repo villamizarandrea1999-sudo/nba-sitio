@@ -25,3 +25,71 @@
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #f9f9f9; }
 ::-webkit-scrollbar-thumb { background: #964900; }
+
+/* NBA Daily Grid game */
+.grid-cell {
+    aspect-ratio: 2 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+    background: #eeeeee;
+    color: #1a1c1c;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    user-select: none;
+    border: 2px solid transparent;
+    transition: transform 0.15s ease, background 0.15s ease;
+}
+.grid-cell:hover {
+    transform: translateY(-2px);
+}
+.grid-cell.selected {
+    background: #964900;
+    color: #ffffff;
+    border-color: #1a1c1c;
+}
+.grid-cell.shake {
+    animation: grid-shake 0.4s ease;
+}
+@keyframes grid-shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+}
+.grid-solved-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 8px;
+    animation: grid-solved-in 0.3s ease;
+}
+.grid-solved-row .cat-name {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+}
+.grid-solved-row .cat-items {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+@keyframes grid-solved-in {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+.grid-cat-1 { background: #f9e58a; color: #1a1c1c; }
+.grid-cat-2 { background: #a8d98a; color: #1a1c1c; }
+.grid-cat-3 { background: #a2c1ff; color: #1a1c1c; }
+.grid-cat-4 { background: #c9a2ff; color: #1a1c1c; }
