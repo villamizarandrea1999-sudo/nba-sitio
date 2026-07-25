@@ -66,11 +66,11 @@
                 NBA GRID
             </a>
 <nav class="hidden md:flex items-center space-x-md">
-<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../../nba-today/index.html">NBA Today</a>
-<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../../index.html#">Scores</a>
-<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../../index.html#">Teams</a>
-<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../../index.html#">Stats</a>
-<a class="font-label-caps text-label-caps text-primary border-b-4 border-primary pb-2 transition-colors duration-200" href="../../index.html#">News</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/nba-today/">NBA Today</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/#">Scores</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/#">Teams</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/#">Stats</a>
+<a class="font-label-caps text-label-caps text-primary border-b-4 border-primary pb-2 transition-colors duration-200" href="/#">News</a>
 </nav>
 <div class="flex items-center space-x-sm">
 <button class="text-surface hover:text-primary transition-colors">
@@ -85,9 +85,9 @@
 <main class="max-w-container-max mx-auto px-grid-margin py-md">
 <!-- Breadcrumb -->
 <div class="mb-md font-label-caps text-xs text-on-surface-variant">
-<a href="../../index.html" class="hover:text-primary transition-colors">HOME</a>
+<a href="/" class="hover:text-primary transition-colors">HOME</a>
 <span class="mx-1">/</span>
-<a href="../../index.html#" class="hover:text-primary transition-colors">NEWS</a>
+<a href="/#" class="hover:text-primary transition-colors">NEWS</a>
 <span class="mx-1">/</span>
 <span class="text-primary">1996 NBA DRAFT</span>
 </div>
@@ -210,7 +210,7 @@
 <!-- Internal Links -->
 <div class="flex flex-wrap gap-sm mt-xl pt-lg border-t border-on-surface-variant/10">
 <a href="../../nba-today/birthdays/" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">SEE NBA PLAYER BIRTHDAYS TODAY</a>
-<a href="../../index.html" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">BACK TO HOME</a>
+<a href="/" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">BACK TO HOME</a>
 </div>
 </article>
 </main>
@@ -222,13 +222,36 @@
 <p class="font-label-caps text-[10px] text-surface-variant/60 mt-xs">© 2024 NBA GRID. PRECISION ENGINEERED SPORTS JOURNALISM.</p>
 </div>
 <div class="flex space-x-md font-label-caps text-xs">
-<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../../index.html#">About</a>
-<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../../index.html#">Staff</a>
-<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../../index.html#">Privacy</a>
-<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../../index.html#">Terms</a>
-<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="../../index.html#">API</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">About</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">Staff</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">Privacy</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">Terms</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">API</a>
 </div>
 </div>
 <div class="h-1 bg-gradient-to-r from-primary via-on-primary-container to-primary w-full opacity-50"></div>
 </footer>
+<!-- Mobile Bottom Nav -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-on-surface border-t border-primary/20 shadow-[0_-4px_0_0_#964900]">
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-none p-xs scale-105 transition-transform" href="/">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-label-caps text-[10px]">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-surface-variant p-xs hover:bg-primary-container transition-transform" href="/nba-today/">
+<span class="material-symbols-outlined">today</span>
+<span class="font-label-caps text-[10px]">Today</span>
+</a>
+<a class="flex flex-col items-center justify-center text-surface-variant p-xs hover:bg-primary-container transition-transform" href="/#">
+<span class="material-symbols-outlined">group_work</span>
+<span class="font-label-caps text-[10px]">Teams</span>
+</a>
+<a class="flex flex-col items-center justify-center text-surface-variant p-xs hover:bg-primary-container transition-transform" href="/#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label-caps text-[10px]">Stats</span>
+</a>
+</div>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-grid-margin bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center hard-shadow hover:scale-110 transition-transform z-40">
+<span class="material-symbols-outlined" data-weight="fill">add</span>
+</button>
 </body></html>

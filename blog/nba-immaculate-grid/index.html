@@ -58,16 +58,16 @@
 <div class="flex justify-between items-center w-full px-grid-margin py-xs max-w-container-max mx-auto">
 <a href="/" class="font-display-lg text-display-lg font-extrabold text-primary uppercase tracking-tighter">NBA GRID</a>
 <nav class="hidden md:flex items-center space-x-md">
-<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../../nba-today/index.html">NBA Today</a>
-<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../../index.html#">Scores</a>
-<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="../../index.html#">Teams</a>
-<a class="font-label-caps text-label-caps text-primary border-b-4 border-primary pb-2 transition-colors duration-200" href="../../index.html#">News</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/nba-today/">NBA Today</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/#">Scores</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/#">Teams</a>
+<a class="font-label-caps text-label-caps text-primary border-b-4 border-primary pb-2 transition-colors duration-200" href="/#">News</a>
 </nav>
 </div>
 </header>
 <main class="max-w-container-max mx-auto px-grid-margin py-md">
 <div class="mb-md font-label-caps text-xs text-on-surface-variant">
-<a href="../../index.html" class="hover:text-primary transition-colors">HOME</a><span class="mx-1">/</span><span class="text-primary">NBA IMMACULATE GRID</span>
+<a href="/" class="hover:text-primary transition-colors">HOME</a><span class="mx-1">/</span><span class="text-primary">NBA IMMACULATE GRID</span>
 </div>
 <article class="editorial-article">
 <header class="mb-lg">
@@ -106,7 +106,7 @@
 </ol>
 
 <h2 class="font-headline-md text-headline-md uppercase italic mt-lg mb-sm">Want a Different Kind of NBA Grid?</h2>
-<p>If you like the format but want a fresh daily challenge, our own <a href="../../index.html#daily-grid" class="text-primary underline">Daily Grid</a> puzzle on the NBA GRID homepage uses the same "find the connections" idea in a Connections-style format — sort 16 NBA names into four hidden categories instead of nine cells. Give it a shot after you're done with today's Immaculate Grid.</p>
+<p>If you like the format but want a fresh daily challenge, our own <a href="/#daily-grid" class="text-primary underline">Daily Grid</a> puzzle on the NBA GRID homepage uses the same "find the connections" idea in a Connections-style format — sort 16 NBA names into four hidden categories instead of nine cells. Give it a shot after you're done with today's Immaculate Grid.</p>
 
 <h2 class="font-headline-md text-headline-md uppercase italic mt-lg mb-sm">Frequently Asked Questions</h2>
 <div class="space-y-md mt-sm">
@@ -138,14 +138,48 @@
 </a>
 </div>
 <div class="flex flex-wrap gap-sm mt-xl pt-lg border-t border-on-surface-variant/10">
-<a href="../../index.html#daily-grid" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">PLAY OUR DAILY GRID</a>
-<a href="../../index.html" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">BACK TO HOME</a>
+<a href="/#daily-grid" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">PLAY OUR DAILY GRID</a>
+<a href="/" class="border border-on-surface font-label-caps text-xs px-sm py-xs hover:bg-on-surface hover:text-surface transition-colors">BACK TO HOME</a>
 </div>
 </article>
 </main>
 <footer class="bg-on-surface text-surface border-t-2 border-primary mt-xl">
 <div class="w-full py-lg px-grid-margin mt-xl flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
+<div class="mb-md md:mb-0">
 <div class="text-headline-md font-headline-md text-primary uppercase">NBA GRID</div>
+<p class="font-label-caps text-[10px] text-surface-variant/60 mt-xs">© 2024 NBA GRID. PRECISION ENGINEERED SPORTS JOURNALISM.</p>
 </div>
+<div class="flex space-x-md font-label-caps text-xs">
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">About</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">Staff</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">Privacy</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">Terms</a>
+<a class="text-surface-variant/60 hover:text-primary underline transition-opacity" href="/#">API</a>
+</div>
+</div>
+<div class="h-1 bg-gradient-to-r from-primary via-on-primary-container to-primary w-full opacity-50"></div>
 </footer>
+<!-- Mobile Bottom Nav -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 bg-on-surface border-t border-primary/20 shadow-[0_-4px_0_0_#964900]">
+<a class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-none p-xs scale-105 transition-transform" href="/">
+<span class="material-symbols-outlined">dynamic_feed</span>
+<span class="font-label-caps text-[10px]">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-surface-variant p-xs hover:bg-primary-container transition-transform" href="/nba-today/">
+<span class="material-symbols-outlined">today</span>
+<span class="font-label-caps text-[10px]">Today</span>
+</a>
+<a class="flex flex-col items-center justify-center text-surface-variant p-xs hover:bg-primary-container transition-transform" href="/#">
+<span class="material-symbols-outlined">group_work</span>
+<span class="font-label-caps text-[10px]">Teams</span>
+</a>
+<a class="flex flex-col items-center justify-center text-surface-variant p-xs hover:bg-primary-container transition-transform" href="/#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="font-label-caps text-[10px]">Stats</span>
+</a>
+</div>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-grid-margin bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center hard-shadow hover:scale-110 transition-transform z-40">
+<span class="material-symbols-outlined" data-weight="fill">add</span>
+</button>
 </body></html>
