@@ -43,6 +43,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nba-grid.com/blog/nba-mascots/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://nba-grid.com/blog/nba-immaculate-grid/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
