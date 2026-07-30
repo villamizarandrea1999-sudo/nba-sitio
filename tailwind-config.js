@@ -57,6 +57,9 @@ tailwind.config = {
                 "xl": "0px",
                 "full": "9999px"
             },
+            "maxWidth": {
+                "container-max": "1280px"
+            },
             "spacing": {
                 "sm": "16px",
                 "md": "24px",
