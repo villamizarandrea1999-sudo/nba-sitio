@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=JetBrains+Mono:wght@400;700&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../../style.css"/>
 <script type="application/ld+json">
@@ -61,9 +62,17 @@
 <!-- Header Navigation -->
 <header class="bg-on-surface sticky top-0 z-50">
 <div class="flex justify-between items-center w-full px-grid-margin py-xs max-w-container-max mx-auto">
-<a href="/" class="font-display-lg text-2xl lg:text-display-lg font-extrabold text-primary uppercase tracking-tighter">
-                NBA GRID
-            </a>
+<a href="/" class="flex items-center gap-2 lg:gap-3">
+<svg width="28" height="28" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 lg:w-10 lg:h-10 shrink-0">
+<rect x="2" y="2" width="27" height="27" class="fill-primary"></rect>
+<rect x="35" y="2" width="27" height="27" fill="#ddc1b1"></rect>
+<rect x="2" y="35" width="27" height="27" fill="#ddc1b1"></rect>
+<circle cx="48.5" cy="48.5" r="13.5" fill="none" class="stroke-primary" stroke-width="3"></circle>
+<line x1="48.5" y1="35" x2="48.5" y2="62" class="stroke-primary" stroke-width="2"></line>
+<line x1="35" y1="48.5" x2="62" y2="48.5" class="stroke-primary" stroke-width="2"></line>
+</svg>
+<span class="logo-wordmark text-xl lg:text-3xl text-surface">NBA <span class="text-primary">GRID</span></span>
+</a>
 <nav class="hidden lg:flex items-center space-x-md">
 <a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/nba-games/">NBA Games</a>
 <a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/nba-today/">NBA Today</a>
