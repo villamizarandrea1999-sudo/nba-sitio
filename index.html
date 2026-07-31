@@ -62,11 +62,17 @@
 <a href="/" class="flex items-center gap-2 lg:gap-3">
 <svg width="28" height="28" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="w-9 h-9 lg:w-[52px] lg:h-[52px] shrink-0">
 <circle cx="32" cy="32" r="30" fill="#F2762E"></circle>
+<circle cx="32" cy="32" r="30" fill="none" stroke="#F5F5F5" stroke-width="1" opacity="0.35"></circle>
 <path d="M32 2 V62 M2 32 H62" stroke="#181818" stroke-width="2.5"></path>
 <path d="M9 12 Q32 32 9 52" fill="none" stroke="#181818" stroke-width="2.5"></path>
 <path d="M55 12 Q32 32 55 52" fill="none" stroke="#181818" stroke-width="2.5"></path>
+<path d="M14 8 Q32 20 50 8" fill="none" stroke="#181818" stroke-width="1.5" opacity="0.6"></path>
+<path d="M14 56 Q32 44 50 56" fill="none" stroke="#181818" stroke-width="1.5" opacity="0.6"></path>
 </svg>
+<div>
 <span class="logo-wordmark text-2xl lg:text-[40px]" style="color:#F5F5F5">NBA <span style="color:#F2762E">GRID</span></span>
+<div class="h-[2px] w-full mt-1" style="background:linear-gradient(90deg,#F2762E,transparent)"></div>
+</div>
 </a>
 <nav class="hidden lg:flex items-center space-x-md">
 <a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/nba-games/">NBA Games</a>
@@ -99,7 +105,10 @@
 </div>
 <div class="hidden peer-checked:flex lg:hidden flex-col fixed inset-0 top-0 z-[70] bg-on-surface p-md overflow-y-auto">
 <div class="flex justify-between items-center mb-lg">
+<div>
 <span class="logo-wordmark text-xl" style="color:#F5F5F5">NBA <span style="color:#F2762E">GRID</span></span>
+<div class="h-[2px] w-full mt-1" style="background:linear-gradient(90deg,#F2762E,transparent)"></div>
+</div>
 <label for="mobile-nav-toggle" class="flex items-center justify-center w-10 h-10 text-surface cursor-pointer">
 <span class="material-symbols-outlined">close</span>
 </label>
