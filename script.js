@@ -32,11 +32,43 @@ const mistakesEl = document.getElementById('grid-mistakes');
 const shuffleBtn = document.getElementById('grid-shuffle');
 const deselectBtn = document.getElementById('grid-deselect');
 const submitBtn = document.getElementById('grid-submit');
+const shareBtn = document.getElementById('grid-share');
+const guessesLeftEl = document.getElementById('grid-guesses-left');
+const correctCountEl = document.getElementById('grid-correct-count');
+const streakCountEl = document.getElementById('grid-streak-count');
+const puzzleNoEl = document.getElementById('grid-puzzle-no');
 
 if (gridEl) {
     let selected = [];
     let mistakesLeft = 4;
+    let correctCount = 0;
+    let guessLog = [];
     let remainingCategories = JSON.parse(JSON.stringify(gridCategories));
+
+    // Puzzle number derived from today's date so it changes daily
+    const EPOCH = new Date('2026-01-01T00:00:00Z');
+    const todayKey = new Date().toISOString().slice(0, 10);
+    const puzzleNo = Math.max(1, Math.floor((new Date(todayKey) - EPOCH) / 86400000) + 1);
+    if (puzzleNoEl) puzzleNoEl.textContent = `GRID #${String(puzzleNo).padStart(3, '0')}`;
+
+    // Daily streak tracking (localStorage)
+    function updateStreak(won) {
+        const data = JSON.parse(localStorage.getItem('nbagrid-streak') || '{}');
+        if (data.lastPlayed === todayKey) {
+            if (streakCountEl) streakCountEl.textContent = data.current || 0;
+            return;
+        }
+        const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+        let current = won ? (data.lastPlayed === yesterday ? (data.current || 0) + 1 : 1) : 0;
+        const best = Math.max(current, data.best || 0);
+        localStorage.setItem('nbagrid-streak', JSON.stringify({ current, best, lastPlayed: todayKey }));
+        if (streakCountEl) streakCountEl.textContent = current;
+    }
+
+    (function initStreakDisplay() {
+        const data = JSON.parse(localStorage.getItem('nbagrid-streak') || '{}');
+        if (streakCountEl) streakCountEl.textContent = data.current || 0;
+    })();
 
     function shuffle(arr) {
         for (let i = arr.length - 1; i > 0; i--) {
@@ -80,14 +112,30 @@ if (gridEl) {
         [...mistakesEl.children].forEach((dot, i) => {
             dot.style.opacity = i < mistakesLeft ? '1' : '0.15';
         });
+        if (guessesLeftEl) guessesLeftEl.textContent = mistakesLeft;
+        if (correctCountEl) correctCountEl.textContent = `${correctCount}/4`;
     }
 
-    function endGame(message) {
+    function buildShareText(won) {
+        const emojiRows = guessLog.map(row => row.map(ok => (ok ? '🟩' : '🟥')).join('')).join('\n');
+        return `NBA GRID #${String(puzzleNo).padStart(3, '0')} ${won ? correctCount + '/4' : 'X/4'}\n${emojiRows}\nnba-grid.com`;
+    }
+
+    function endGame(message, won) {
         statusEl.textContent = message;
         submitBtn.disabled = true;
         shuffleBtn.disabled = true;
         submitBtn.classList.add('opacity-50');
         shuffleBtn.classList.add('opacity-50');
+        updateStreak(won);
+        if (shareBtn) {
+            shareBtn.classList.remove('hidden');
+            shareBtn.onclick = () => {
+                const text = buildShareText(won);
+                if (navigator.clipboard) navigator.clipboard.writeText(text);
+                statusEl.textContent = 'RESULT COPIED TO CLIPBOARD';
+            };
+        }
     }
 
     submitBtn.addEventListener('click', () => {
@@ -108,13 +156,17 @@ if (gridEl) {
             solvedEl.appendChild(row);
             remainingCategories = remainingCategories.filter(c => c.id !== cat.id);
             selected = [];
+            correctCount += 1;
+            guessLog.push([true]);
             statusEl.textContent = 'CORRECT!';
             renderGrid();
+            updateMistakesDisplay();
             if (remainingCategories.length === 0) {
-                endGame('YOU SOLVED THE GRID!');
+                endGame('YOU SOLVED THE GRID!', true);
             }
         } else {
             mistakesLeft -= 1;
+            guessLog.push([false]);
             updateMistakesDisplay();
             selected.forEach(item => {
                 const cell = gridEl.querySelector(`[data-item="${item}"]`);
@@ -125,7 +177,7 @@ if (gridEl) {
             if (mistakesLeft <= 0) {
                 selected = [];
                 renderGrid();
-                endGame('OUT OF GUESSES — NICE TRY!');
+                endGame('OUT OF GUESSES — NICE TRY!', false);
             }
         }
     });

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
@@ -7,7 +7,25 @@
 <link rel="alternate" hreflang="x-default" href="https://nba-grid.com/"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <meta name="google-site-verification" content="ay3JsGQytyFIuTxhKSpCCkVQ76VhLvT-oWrElq_LUW8" />
-<title>NBA GRID | High-Octane Journalism</title>
+<title>NBA GRID | Breaking NBA News, Trades, Scores & Daily Puzzles</title>
+<meta name="description" content="Breaking NBA news, trades and contracts as they happen, live scores and schedules, and free daily NBA puzzles like Immaculate Grid and Connections."/>
+<link rel="canonical" href="https://nba-grid.com/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="NBA GRID | Breaking NBA News, Trades, Scores & Daily Puzzles"/>
+<meta property="og:description" content="Breaking NBA news, trades and contracts as they happen, live scores and schedules, and free daily NBA puzzles like Immaculate Grid and Connections."/>
+<meta property="og:image" content="https://nba-grid.com/assets/images/hero-dunk.jpg"/>
+<meta property="og:url" content="https://nba-grid.com/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "NBA GRID",
+  "url": "https://nba-grid.com",
+  "inLanguage": "en-US",
+  "description": "Breaking NBA news, trades and contracts as they happen, live scores and schedules, and free daily NBA puzzles like Immaculate Grid and Connections."
+}
+</script>
 <link rel="stylesheet" href="tailwind.css"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -98,6 +116,13 @@
 <a href="/blog/kobe-nba-logo/">Kobe NBA Logo Campaign</a>
 <a href="/blog/nba-mascots/">NBA Mascots</a>
 <a href="/blog/wilson-nba-drv-basketball/">Wilson NBA DRV Basketball</a>
+<a href="/blog/russell-westbrook-retirement/">Russell Westbrook Retires</a>
+<a href="/blog/giannis-antetokounmpo-heat-trade/">Giannis Traded to Miami</a>
+<a href="/blog/lakers-sold-12-5-billion/">Lakers Sold for $12.5B</a>
+<a href="/blog/bradley-beal-clippers-2026/">Bradley Beal Returns to LA</a>
+<a href="/blog/nba-2026-27-schedule/">NBA 2026-27 Schedule</a>
+<a href="/blog/how-many-nba-players-are-there/">How Many NBA Players Are There</a>
+<a href="/blog/tallest-nba-player-right-now/">Tallest NBA Player Right Now</a>
 </div>
 </div>
 </nav>
@@ -144,6 +169,13 @@
 <a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/kobe-nba-logo/">Kobe NBA Logo Campaign</a>
 <a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/nba-mascots/">NBA Mascots</a>
 <a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/wilson-nba-drv-basketball/">Wilson NBA DRV Basketball</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/russell-westbrook-retirement/">Russell Westbrook Retires</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/giannis-antetokounmpo-heat-trade/">Giannis Traded to Miami</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/lakers-sold-12-5-billion/">Lakers Sold for $12.5B</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/bradley-beal-clippers-2026/">Bradley Beal Returns to LA</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/nba-2026-27-schedule/">NBA 2026-27 Schedule</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/how-many-nba-players-are-there/">How Many NBA Players Are There</a>
+<a class="font-label-caps text-label-caps text-surface hover:text-primary-container transition-colors duration-200" href="/blog/tallest-nba-player-right-now/">Tallest NBA Player Right Now</a>
 </div>
 </div>
 </nav>
@@ -213,12 +245,26 @@
 <div class="daily-grid-glow"></div>
 <div class="relative flex items-end justify-between mb-lg">
 <div>
-<span class="font-label-caps text-primary-fixed text-[11px] tracking-widest opacity-80">DAILY PUZZLE · NO. 042</span>
+<span id="grid-puzzle-no" class="font-label-caps text-primary-fixed text-[11px] tracking-widest opacity-80">GRID #001</span>
 <h2 id="daily-grid" class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase italic tracking-tighter text-white mt-1">THE DAILY GRID</h2>
 </div>
 <div class="hidden md:flex items-center gap-2 font-label-caps text-[11px] text-white/60">
 <span class="material-symbols-outlined text-[16px]">grid_view</span>
 FIND FOUR GROUPS OF FOUR
+</div>
+</div>
+<div class="relative grid grid-cols-3 gap-2 md:gap-3 mb-lg">
+<div class="daily-grid-stat">
+<span class="daily-grid-stat-value" id="grid-guesses-left">4</span>
+<span class="daily-grid-stat-label">GUESSES LEFT</span>
+</div>
+<div class="daily-grid-stat">
+<span class="daily-grid-stat-value" id="grid-correct-count">0/4</span>
+<span class="daily-grid-stat-label">SOLVED</span>
+</div>
+<div class="daily-grid-stat">
+<span class="daily-grid-stat-value" id="grid-streak-count">0</span>
+<span class="daily-grid-stat-label">DAY STREAK 🔥</span>
 </div>
 </div>
 <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter">
@@ -241,6 +287,8 @@ FIND FOUR GROUPS OF FOUR
 <span class="material-symbols-outlined text-[16px]">close</span>DESELECT</button>
 <button id="grid-submit" class="daily-grid-btn-primary">SUBMIT</button>
 </div>
+<button id="grid-share" class="daily-grid-btn-ghost mt-2 hidden w-fit">
+<span class="material-symbols-outlined text-[16px]">share</span>SHARE RESULT</button>
 <p id="grid-status" class="font-label-caps text-xs text-primary-fixed mt-md h-4"></p>
 </div>
 <div class="lg:col-span-9">
@@ -311,9 +359,34 @@ FIND FOUR GROUPS OF FOUR
 <section class="mb-xl">
 <div class="flex items-end justify-between mb-lg border-b-2 border-on-surface pb-xs">
 <h2 class="font-display-lg text-headline-lg uppercase italic tracking-tighter">LATEST NEWS</h2>
-<div class="font-label-caps text-primary hidden md:block">WEEK OF AUGUST 3-7</div>
+<div class="font-label-caps text-primary hidden md:block">WEEK OF AUGUST 10-15</div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-grid-gutter">
+<a href="blog/giannis-antetokounmpo-heat-trade/" class="today-card">
+<img src="assets/images/six-team-trade-hoop.jpg" alt="Basketball hoop symbolizing the blockbuster Giannis Antetokounmpo trade to the Miami Heat" class="w-full h-32 object-cover rounded-xl mb-sm" loading="lazy" width="640" height="427"/>
+<span class="font-label-caps text-xs text-primary mb-xs block">TRADES</span>
+<h3 class="font-headline-md text-[16px] uppercase leading-tight">Giannis Antetokounmpo Traded to the Heat</h3>
+</a>
+<a href="blog/lakers-sold-12-5-billion/" class="today-card">
+<img src="assets/images/donovan-mitchell-extension.jpg" alt="Ownership sale agreement representing the record $12.5 billion Lakers deal" class="w-full h-32 object-cover rounded-xl mb-sm" loading="lazy" width="1280" height="711"/>
+<span class="font-label-caps text-xs text-primary mb-xs block">BUSINESS</span>
+<h3 class="font-headline-md text-[16px] uppercase leading-tight">Lakers Sold for Record $12.5 Billion</h3>
+</a>
+<a href="blog/russell-westbrook-retirement/" class="today-card">
+<img src="assets/images/hero-dunk.jpg" alt="Russell Westbrook retires from the NBA" class="w-full h-32 object-cover rounded-xl mb-sm" loading="lazy" width="640" height="427"/>
+<span class="font-label-caps text-xs text-primary mb-xs block">BREAKING NEWS</span>
+<h3 class="font-headline-md text-[16px] uppercase leading-tight">Russell Westbrook Retires After 18 Seasons</h3>
+</a>
+<a href="blog/bradley-beal-clippers-2026/" class="today-card">
+<img src="assets/images/kawhi-daktronics-court.jpg" alt="Outdoor basketball court representing Bradley Beal's return to the LA Clippers" class="w-full h-32 object-cover rounded-xl mb-sm" loading="lazy" width="1280" height="711"/>
+<span class="font-label-caps text-xs text-primary mb-xs block">FREE AGENCY</span>
+<h3 class="font-headline-md text-[16px] uppercase leading-tight">Bradley Beal Re-Signs With the Clippers</h3>
+</a>
+<a href="blog/nba-2026-27-schedule/" class="today-card">
+<img src="assets/images/nba-games.jpg" alt="NBA 2026-27 season schedule released" class="w-full h-32 object-cover rounded-xl mb-sm" loading="lazy" width="640" height="427"/>
+<span class="font-label-caps text-xs text-primary mb-xs block">SCHEDULE</span>
+<h3 class="font-headline-md text-[16px] uppercase leading-tight">NBA 2026-27 Schedule Released</h3>
+</a>
 <a href="blog/brandon-clarke-causa-muerte/" class="today-card">
 <img src="assets/images/nba-arena-empty.jpg" alt="Brandon Clarke" class="w-full h-32 object-cover rounded-xl mb-sm" loading="lazy" width="1280" height="610"/>
 <span class="font-label-caps text-xs text-primary mb-xs block">NEWS</span>
