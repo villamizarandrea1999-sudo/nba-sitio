@@ -49,9 +49,18 @@ async function apiGet(endpoint, params = {}) {
   throw new Error(`${endpoint} failed after repeated 429s`);
 }
 
+// The 30 real NBA franchises. The /teams endpoint can return extra non-NBA
+// entries (e.g. international preseason opponents) that show up as 0-game
+// rows in the grid, so we filter down to this known-good list.
+const NBA_ABBREVIATIONS = new Set([
+  'ATL', 'BOS', 'BKN', 'CHA', 'CHI', 'CLE', 'DAL', 'DEN', 'DET', 'GSW',
+  'HOU', 'IND', 'LAC', 'LAL', 'MEM', 'MIA', 'MIL', 'MIN', 'NOP', 'NYK',
+  'OKC', 'ORL', 'PHI', 'PHX', 'POR', 'SAC', 'SAS', 'TOR', 'UTA', 'WAS',
+]);
+
 async function fetchAllTeams() {
   const data = await apiGet('/teams');
-  return (data.data || []).filter(t => t.conference); // drop non-NBA/all-star entries if present
+  return (data.data || []).filter(t => NBA_ABBREVIATIONS.has(t.abbreviation));
 }
 
 async function fetchAllSeasonGames() {
