@@ -60,6 +60,10 @@ const NBA_ABBREVIATIONS = new Set([
 
 async function fetchAllTeams() {
   const data = await apiGet('/teams');
+  // Keep every row matching a real NBA abbreviation, even duplicates — some
+  // franchises have more than one team id in the API. Games get aggregated
+  // by abbreviation later so no games are lost regardless of which id they
+  // reference.
   return (data.data || []).filter(t => NBA_ABBREVIATIONS.has(t.abbreviation));
 }
 
@@ -117,13 +121,19 @@ function buildTableHtml(teams, weeks, counts) {
     .map(w => `<th scope="col">Wk ${w.index}<br><span class="sched-grid-date">${fmtShort(w.start)}</span></th>`)
     .join('');
 
-  const sortedTeams = teams.slice().sort((a, b) => a.abbreviation.localeCompare(b.abbreviation));
+  const seenAbbr = new Set();
+  const dedupedTeams = teams.filter(t => {
+    if (seenAbbr.has(t.abbreviation)) return false;
+    seenAbbr.add(t.abbreviation);
+    return true;
+  });
+  const sortedTeams = dedupedTeams.slice().sort((a, b) => a.abbreviation.localeCompare(b.abbreviation));
 
   const rows = sortedTeams
     .map(team => {
       const cells = weeks
         .map(w => {
-          const n = (counts[team.id] && counts[team.id][w.index]) || 0;
+          const n = (counts[team.abbreviation] && counts[team.abbreviation][w.index]) || 0;
           let cls = 'sched-grid-cell';
           if (n === 0) cls += ' sched-grid-0';
           else if (n === 1) cls += ' sched-grid-light';
@@ -154,10 +164,16 @@ async function main() {
   const games = await fetchAllSeasonGames();
   const weeks = buildWeeks(SEASON_START, SEASON_END);
 
+  // Keyed by abbreviation (not team id) so duplicate team ids for the same
+  // franchise still get aggregated into one row.
+  const idToAbbr = {};
   const counts = {};
   teams.forEach(t => {
-    counts[t.id] = {};
-    weeks.forEach(w => (counts[t.id][w.index] = 0));
+    idToAbbr[t.id] = t.abbreviation;
+    if (!counts[t.abbreviation]) {
+      counts[t.abbreviation] = {};
+      weeks.forEach(w => (counts[t.abbreviation][w.index] = 0));
+    }
   });
 
   games.forEach(g => {
@@ -165,8 +181,10 @@ async function main() {
     const gd = new Date(g.date + 'T00:00:00Z');
     const week = weeks.find(w => gd >= w.start && gd <= w.end);
     if (!week) return;
-    if (g.home_team && counts[g.home_team.id]) counts[g.home_team.id][week.index]++;
-    if (g.visitor_team && counts[g.visitor_team.id]) counts[g.visitor_team.id][week.index]++;
+    const homeAbbr = g.home_team && idToAbbr[g.home_team.id];
+    const visitorAbbr = g.visitor_team && idToAbbr[g.visitor_team.id];
+    if (homeAbbr) counts[homeAbbr][week.index]++;
+    if (visitorAbbr) counts[visitorAbbr][week.index]++;
   });
 
   const tableHtml = buildTableHtml(teams, weeks, counts);
