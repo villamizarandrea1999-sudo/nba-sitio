@@ -24,15 +24,29 @@ if (!API_KEY) {
   process.exit(1);
 }
 
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+// Free tier allows 5 requests/minute — wait ~13s between calls to stay under that.
+const RATE_LIMIT_DELAY_MS = 13000;
+
 async function apiGet(endpoint, params = {}) {
   const url = new URL(BASE + endpoint);
   for (const [key, value] of Object.entries(params)) {
     if (Array.isArray(value)) value.forEach(v => url.searchParams.append(key, v));
     else url.searchParams.set(key, value);
   }
-  const res = await fetch(url, { headers: { Authorization: API_KEY } });
-  if (!res.ok) throw new Error(`${endpoint} failed: ${res.status} ${res.statusText}`);
-  return res.json();
+
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    const res = await fetch(url, { headers: { Authorization: API_KEY } });
+    if (res.status === 429) {
+      const wait = RATE_LIMIT_DELAY_MS * attempt;
+      console.log(`Rate limited on ${endpoint}, waiting ${wait}ms (attempt ${attempt})...`);
+      await sleep(wait);
+      continue;
+    }
+    if (!res.ok) throw new Error(`${endpoint} failed: ${res.status} ${res.statusText}`);
+    return res.json();
+  }
+  throw new Error(`${endpoint} failed after repeated 429s`);
 }
 
 async function fetchAllTeams() {
@@ -43,7 +57,10 @@ async function fetchAllTeams() {
 async function fetchAllSeasonGames() {
   let games = [];
   let cursor;
+  let first = true;
   do {
+    if (!first) await sleep(RATE_LIMIT_DELAY_MS);
+    first = false;
     const params = { 'seasons[]': SEASON, per_page: 100 };
     if (cursor) params.cursor = cursor;
     const data = await apiGet('/games', params);
@@ -123,7 +140,9 @@ function buildTableHtml(teams, weeks, counts) {
 }
 
 async function main() {
-  const [teams, games] = await Promise.all([fetchAllTeams(), fetchAllSeasonGames()]);
+  const teams = await fetchAllTeams();
+  await sleep(RATE_LIMIT_DELAY_MS);
+  const games = await fetchAllSeasonGames();
   const weeks = buildWeeks(SEASON_START, SEASON_END);
 
   const counts = {};
