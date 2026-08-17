@@ -118,7 +118,7 @@ function escapeHtml(s) {
 
 function buildTableHtml(teams, weeks, counts) {
   const theadWeeks = weeks
-    .map(w => `<th scope="col">Wk ${w.index}<br><span class="sched-grid-date">${fmtShort(w.start)}</span></th>`)
+    .map((w, i) => `<th scope="col" class="sched-grid-sortable" data-col="${i + 3}" data-type="num">Wk ${w.index}<br><span class="sched-grid-date">${fmtShort(w.start)}</span></th>`)
     .join('');
 
   const seenAbbr = new Set();
@@ -131,9 +131,14 @@ function buildTableHtml(teams, weeks, counts) {
 
   const rows = sortedTeams
     .map(team => {
+      const teamCounts = counts[team.abbreviation] || {};
+      const values = weeks.map(w => teamCounts[w.index] || 0);
+      const totalGames = values.reduce((a, b) => a + b, 0);
+      const heavyWeeks = values.filter(n => n >= 4).length;
+
       const cells = weeks
         .map(w => {
-          const n = (counts[team.abbreviation] && counts[team.abbreviation][w.index]) || 0;
+          const n = teamCounts[w.index] || 0;
           let cls = 'sched-grid-cell';
           if (n === 0) cls += ' sched-grid-0';
           else if (n === 1) cls += ' sched-grid-light';
@@ -141,15 +146,15 @@ function buildTableHtml(teams, weeks, counts) {
           return `<td class="${cls}">${n}</td>`;
         })
         .join('');
-      return `<tr><th scope="row">${escapeHtml(team.abbreviation)}</th>${cells}</tr>`;
+      return `<tr><th scope="row">${escapeHtml(team.abbreviation)}</th><td class="sched-grid-cell sched-grid-summary">${totalGames}</td><td class="sched-grid-cell sched-grid-summary">${heavyWeeks}</td>${cells}</tr>`;
     })
     .join('\n');
 
   return [
-    '<table class="sched-grid-table">',
+    '<table class="sched-grid-table" id="sched-grid-table">',
     '<caption class="sr-only">NBA games per team per week, 2026-27 season</caption>',
     '<thead>',
-    `<tr><th scope="col">Team</th>${theadWeeks}</tr>`,
+    `<tr><th scope="col" class="sched-grid-sortable" data-col="0" data-type="text">Team</th><th scope="col" class="sched-grid-sortable" data-col="1" data-type="num">Total<br><span class="sched-grid-date">games</span></th><th scope="col" class="sched-grid-sortable" data-col="2" data-type="num">4+ Wks<br><span class="sched-grid-date">heavy</span></th>${theadWeeks}</tr>`,
     '</thead>',
     '<tbody>',
     rows,

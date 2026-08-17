@@ -472,6 +472,12 @@ body {
 .sched-grid-light { background: rgba(220, 38, 38, 0.06); }
 .sched-grid-heavy { background: rgba(22, 163, 74, 0.15); color: #15803d; font-weight: 800; }
 .sched-grid-loading { padding: 24px; color: rgba(26, 28, 28, 0.5); font-family: "Work Sans", sans-serif; }
+.sched-grid-summary { background: rgba(150, 73, 0, 0.08); font-weight: 800; }
+.sched-grid-sortable { cursor: pointer; user-select: none; position: relative; }
+.sched-grid-sortable:hover { background: #2a2a2a; }
+.sched-grid-sortable::after { content: "\2195"; opacity: 0.35; margin-left: 4px; font-size: 10px; }
+.sched-grid-sort-asc::after { content: "\2191"; opacity: 1; }
+.sched-grid-sort-desc::after { content: "\2193"; opacity: 1; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 
 /* NBA Today hub cards */
