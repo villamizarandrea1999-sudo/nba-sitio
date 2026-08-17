@@ -433,6 +433,47 @@ body {
 .grid-cat-3 { background: linear-gradient(135deg, #a2c1ff, #6f97ec); color: #1a1c1c; }
 .grid-cat-4 { background: linear-gradient(135deg, #d3b3ff, #a875f0); color: #1a1c1c; }
 
+/* NBA Schedule Grid table */
+.sched-grid-wrap {
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid rgba(26, 28, 28, 0.1);
+}
+.sched-grid-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+}
+.sched-grid-table th,
+.sched-grid-table td {
+    padding: 8px 10px;
+    text-align: center;
+    border: 1px solid rgba(26, 28, 28, 0.08);
+    white-space: nowrap;
+}
+.sched-grid-table thead th {
+    background: #1a1c1c;
+    color: #ffffff;
+    position: sticky;
+    top: 0;
+    font-weight: 700;
+    z-index: 1;
+}
+.sched-grid-table tbody th {
+    background: #f5f5f5;
+    position: sticky;
+    left: 0;
+    font-weight: 800;
+    z-index: 1;
+}
+.sched-grid-cell { font-weight: 600; }
+.sched-grid-0 { background: rgba(220, 38, 38, 0.12); color: #b91c1c; }
+.sched-grid-light { background: rgba(220, 38, 38, 0.06); }
+.sched-grid-heavy { background: rgba(22, 163, 74, 0.15); color: #15803d; font-weight: 800; }
+.sched-grid-loading { padding: 24px; color: rgba(26, 28, 28, 0.5); font-family: "Work Sans", sans-serif; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
 /* NBA Today hub cards */
 .today-card {
     position: relative;

@@ -115,6 +115,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://nba-grid.com/blog/nba-fantasy-schedule-grid/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://nba-grid.com/nba-today/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>daily</changefreq>
