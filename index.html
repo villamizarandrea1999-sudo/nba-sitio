@@ -185,61 +185,123 @@
 </header>
 <main class="max-w-container-max mx-auto px-grid-margin py-md">
 <!-- Hero Section -->
-<section class="grid grid-cols-12 gap-grid-gutter mb-xl relative">
-<div class="absolute -top-10 -left-10 opacity-5 pointer-events-none select-none">
-<span class="font-label-caps text-[200px] leading-none">GRID-01</span>
+<section style="display:grid;grid-template-columns:1fr 375px;gap:16px;align-items:start" class="grid-cols-1 lg:grid-cols-[1fr_375px] mb-xl">
+<a href="#daily-grid" style="position:relative;display:block;border-radius:6px;overflow:hidden;background:#111827;height:440px;color:#fff">
+<img src="assets/images/hero-dunk.jpg" alt="A professional basketball player performing a powerful slam dunk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,16,0) 30%,rgba(8,12,16,.92) 100%)"></div>
+<div style="position:relative;padding:32px;height:100%;display:flex;flex-direction:column;justify-content:flex-end">
+<div style="display:inline-flex;align-self:flex-start;background:#c2620f;color:#fff;font-size:12px;font-weight:800;letter-spacing:.1em;padding:6px 10px;border-radius:3px;margin-bottom:16px">BREAKING NEWS</div>
+<h1 style="margin:0;font-size:46px;line-height:1.06;font-weight:800;letter-spacing:-.02em;max-width:18ch;font-family:'Bricolage Grotesque',sans-serif">NBA GRID</h1>
+<span style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:#c2620f;color:#fff;font-size:13px;font-weight:700;letter-spacing:.08em;padding:11px 18px;border-radius:4px;width:fit-content">PLAY TODAY'S DAILY GRID →</span>
 </div>
-<div class="col-span-12 lg:col-span-8 group relative overflow-hidden bg-on-surface border border-on-surface-variant/20">
-<div class="relative h-[380px] sm:h-[460px] md:h-[600px] overflow-hidden">
-<img class="w-full h-full object-cover object-left grayscale contrast-125 group-hover:scale-105 group-hover:grayscale-0 transition-all duration-700" alt="A professional basketball player performing a powerful slam dunk" src="assets/images/hero-dunk.jpg" width="1280" height="640"/>
-<div class="absolute inset-0 bg-gradient-to-t from-on-surface via-on-surface/20 to-transparent"></div>
-<div class="absolute bottom-0 left-0 p-lg w-full">
-<div class="flex items-center space-x-sm mb-sm">
-<span class="bg-primary text-on-primary font-label-caps px-xs py-1">BREAKING NEWS</span>
-<span class="text-surface font-label-caps opacity-70">4 MINUTES AGO</span>
-</div>
-<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-surface mb-md max-w-2xl uppercase italic">
-                            NBA GRID
-                        </h1>
-<a href="#daily-grid" class="bg-primary text-on-primary font-label-caps px-md py-sm flex items-center w-fit group-hover:bg-primary-container transition-colors hard-shadow">
-                            PLAY TODAY'S DAILY GRID <span class="material-symbols-outlined ml-xs">arrow_forward</span>
 </a>
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="background:#0d1418;border-radius:6px;padding:20px 20px 8px">
+<div style="display:flex;align-items:center;gap:10px;color:#fff">
+<span style="width:11px;height:11px;border-radius:50%;background:#ef7f1a;flex:none"></span>
+<span style="font-size:18px;font-weight:800;letter-spacing:.02em;white-space:nowrap;font-family:'Bricolage Grotesque',sans-serif">LIVE SCOREBOARD</span>
+<span style="margin-left:auto;color:#9ca3af">→</span>
+</div>
+<div style="padding:16px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#9ca3af;margin-bottom:12px">WESTERN CONFERENCE</div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+<span style="width:20px;height:20px;border-radius:4px;background:#fdb927;flex:none"></span>
+<span style="color:#fff;font-size:15px;font-weight:600;white-space:nowrap">L.A. Lakers</span>
+<span style="margin-left:auto;color:#fff;font-size:15px;font-weight:700">112</span>
+<span style="color:#9ca3af;font-size:12px;width:70px;text-align:right">4Q 2:14</span>
+</div>
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:20px;height:20px;border-radius:4px;background:#1d428a;flex:none"></span>
+<span style="color:#e5e7eb;font-size:15px;white-space:nowrap">Golden State</span>
+<span style="margin-left:auto;color:#e5e7eb;font-size:15px;font-weight:700">108</span>
+<span style="width:70px"></span>
 </div>
 </div>
+<div style="padding:16px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#9ca3af;margin-bottom:12px">EASTERN CONFERENCE</div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+<span style="width:20px;height:20px;border-radius:4px;background:#007a33;flex:none"></span>
+<span style="color:#fff;font-size:15px;font-weight:600;white-space:nowrap">Boston</span>
+<span style="margin-left:auto;color:#fff;font-size:15px;font-weight:700">124</span>
+<span style="color:#9ca3af;font-size:12px;width:70px;text-align:right">Final</span>
 </div>
-<!-- Sidebar Quick Widgets -->
-<div class="col-span-12 lg:col-span-4 flex flex-col space-y-grid-gutter">
-<!-- Trending List -->
-<div class="bg-surface-container-low p-md border border-on-surface-variant/10">
-<h3 class="font-label-caps text-primary mb-md flex justify-between">
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:20px;height:20px;border-radius:4px;background:#006bb6;flex:none"></span>
+<span style="color:#e5e7eb;font-size:15px;white-space:nowrap">Philadelphia</span>
+<span style="margin-left:auto;color:#e5e7eb;font-size:15px;font-weight:700">101</span>
+<span style="width:70px"></span>
+</div>
+</div>
+<div style="padding:16px 0 8px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#9ca3af;margin-bottom:12px">UPCOMING</div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+<span style="width:20px;height:20px;border-radius:4px;background:#e56020;flex:none"></span>
+<span style="color:#fff;font-size:15px;font-weight:600;white-space:nowrap">Phoenix</span>
+<span style="margin-left:auto;color:#9ca3af;font-size:12px">10:30 PM ET</span>
+</div>
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:20px;height:20px;border-radius:4px;background:#0e2240;flex:none"></span>
+<span style="color:#e5e7eb;font-size:15px;white-space:nowrap">Denver</span>
+</div>
+</div>
+<a href="nba-games/" style="display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12);color:#fff;font-size:15px;font-weight:600;white-space:nowrap">See all scores →</a>
+</div>
+<div style="background:#0d1418;border-radius:6px;padding:20px">
+<h3 style="display:flex;justify-content:space-between;color:#ef7f1a;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;margin:0">
 <span>TRENDING NOW</span>
-<span class="text-on-surface-variant/30">[00-05]</span>
+<span style="color:#4b5563">[00-05]</span>
 </h3>
-<ul class="space-y-md">
-<li class="border-b border-on-surface-variant/10 pb-sm group cursor-pointer">
-<span class="font-label-caps text-xs text-on-surface-variant">01 / RUMORS</span>
-<p class="font-headline-md text-body-lg font-bold group-hover:text-primary transition-colors">Trade Block: 3 teams eyeing the MVP runner-up</p>
+<ul style="list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:16px">
+<li style="border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:12px">
+<span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9ca3af">01 / RUMORS</span>
+<p style="margin:6px 0 0;color:#fff;font-size:15px;font-weight:700;line-height:1.3">Trade Block: 3 teams eyeing the MVP runner-up</p>
 </li>
-<li class="border-b border-on-surface-variant/10 pb-sm group cursor-pointer">
-<span class="font-label-caps text-xs text-on-surface-variant">02 / ANALYSIS</span>
-<p class="font-headline-md text-body-lg font-bold group-hover:text-primary transition-colors">Why the mid-range jumper is making a lethal comeback</p>
+<li style="border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:12px">
+<span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9ca3af">02 / ANALYSIS</span>
+<p style="margin:6px 0 0;color:#fff;font-size:15px;font-weight:700;line-height:1.3">Why the mid-range jumper is making a lethal comeback</p>
 </li>
-<li class="border-b border-on-surface-variant/10 pb-sm group cursor-pointer">
-<span class="font-label-caps text-xs text-on-surface-variant">03 / INJURY REPORT</span>
-<p class="font-headline-md text-body-lg font-bold group-hover:text-primary transition-colors">Star Point Guard sidelined for upcoming West Coast tour</p>
+<li style="padding-bottom:4px">
+<span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#9ca3af">03 / INJURY REPORT</span>
+<p style="margin:6px 0 0;color:#fff;font-size:15px;font-weight:700;line-height:1.3">Star Point Guard sidelined for upcoming West Coast tour</p>
 </li>
 </ul>
 </div>
-<!-- Newsletter Callout -->
-<div class="bg-on-surface p-md text-surface flex flex-col justify-center border-t-4 border-primary">
-<p class="font-label-caps text-primary mb-xs">GRID INSIDER</p>
-<h4 class="font-headline-md text-headline-md mb-sm">DIRECT TO YOUR INBOX</h4>
-<div class="flex">
-<input class="bg-surface-variant/10 border-none w-full text-surface font-label-caps focus:ring-1 focus:ring-primary" placeholder="ENTER EMAIL" type="email"/>
-<button class="bg-primary text-on-primary px-sm"><span class="material-symbols-outlined">send</span></button>
+<div style="background:#0d1418;border-radius:6px;padding:22px;border-top:3px solid #c2620f">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;color:#ef7f1a">GRID INSIDER</div>
+<div style="color:#fff;font-size:26px;font-weight:800;line-height:1.15;margin:10px 0 16px;font-family:'Bricolage Grotesque',sans-serif">Direct to your inbox</div>
+<div style="display:flex">
+<input type="email" placeholder="ENTER EMAIL" style="flex:1;min-width:0;background:#111a1f;border:1px solid rgba(255,255,255,.14);border-right:none;color:#fff;padding:12px 14px;font-size:12px;letter-spacing:.1em;font-family:'JetBrains Mono',monospace;border-radius:4px 0 0 4px;outline:none"/>
+<button type="button" style="background:#c2620f;border:none;color:#fff;padding:0 18px;font-size:16px;border-radius:0 4px 4px 0;cursor:pointer">➤</button>
 </div>
 </div>
 </div>
+</section>
+<!-- Category Icon Nav -->
+<section style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid #e5e7eb;background:#fff;border-radius:6px 6px 0 0;margin-bottom:44px" class="grid-cols-3 md:grid-cols-6">
+<a href="nba-games/" style="display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 8px;border-bottom:3px solid #c2620f;color:#111827;font-size:14px;font-weight:700">
+<span class="material-symbols-outlined" style="color:#c2620f">sports_basketball</span>
+NBA Games
+</a>
+<a href="nba-today/" style="display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 8px;color:#6b7280;font-size:14px;font-weight:600;border-left:1px solid #eef0f2">
+<span class="material-symbols-outlined">today</span>
+NBA Today
+</a>
+<a href="blog/how-to-watch-nba-games-live/" style="display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 8px;color:#6b7280;font-size:14px;font-weight:600;border-left:1px solid #eef0f2">
+<span class="material-symbols-outlined">live_tv</span>
+Watch Live
+</a>
+<a href="blog/nba-highlights/" style="display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 8px;color:#6b7280;font-size:14px;font-weight:600;border-left:1px solid #eef0f2">
+<span class="material-symbols-outlined">play_circle</span>
+Highlights
+</a>
+<a href="blog/nba-tickets/" style="display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 8px;color:#6b7280;font-size:14px;font-weight:600;border-left:1px solid #eef0f2">
+<span class="material-symbols-outlined">confirmation_number</span>
+Tickets
+</a>
+<a href="blog/nba-immaculate-grid/" style="display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 8px;color:#6b7280;font-size:14px;font-weight:600;border-left:1px solid #eef0f2">
+<span class="material-symbols-outlined">grid_view</span>
+Guides
+</a>
 </section>
 <!-- NBA Connections-style Daily Grid -->
 <section class="mb-xl">
