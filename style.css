@@ -10,6 +10,11 @@ body {
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
+/* Missing from the compiled tailwind.css (only md:/lg: variants are built),
+   which left `grid grid-cols-3` containers collapsing to a single column. */
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
 .logo-wordmark {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
