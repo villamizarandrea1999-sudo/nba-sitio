@@ -15,6 +15,70 @@ body {
 .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
+/* NBA GRID logo */
+.nbagrid-logo {
+    --ink: #17181a;
+    --ball: #c4570f;
+    --size: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--size) * 0.34);
+    background: #fff;
+    border-radius: calc(var(--size) * 0.25);
+    padding: calc(var(--size) * 0.34) calc(var(--size) * 0.5);
+    font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+    font-weight: 600;
+    font-size: var(--size);
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    flex: none;
+}
+.nbagrid-ball {
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: var(--ball);
+    overflow: hidden;
+    flex: none;
+}
+.nbagrid-ball b, .nbagrid-ball u, .nbagrid-ball s {
+    position: absolute;
+    background: none;
+    border: 0;
+}
+.nbagrid-ball b {
+    left: 50%; top: 0;
+    width: max(1.5px, calc(var(--size) * 0.08));
+    height: 100%;
+    background: #fff;
+    transform: translateX(-50%);
+}
+.nbagrid-ball u {
+    top: 50%; left: 0;
+    height: max(1.5px, calc(var(--size) * 0.08));
+    width: 100%;
+    background: #fff;
+    transform: translateY(-50%);
+}
+.nbagrid-ball s {
+    inset: 0;
+    border-radius: 50%;
+    border-left: max(1.5px, calc(var(--size) * 0.08)) solid #fff;
+    border-right: max(1.5px, calc(var(--size) * 0.08)) solid #fff;
+    box-sizing: border-box;
+    transform: scaleX(0.52);
+}
+.nbagrid-logo.on-light {
+    background: var(--ink);
+    color: #fff;
+    --ball: #e2701c;
+}
+.nbagrid-logo.on-light .nbagrid-ball b,
+.nbagrid-logo.on-light .nbagrid-ball u { background: var(--ink); }
+.nbagrid-logo.on-light .nbagrid-ball s { border-color: var(--ink); }
+
 .logo-wordmark {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 800;
