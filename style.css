@@ -17,15 +17,15 @@ body {
 
 /* NBA GRID logo */
 .nbagrid-logo {
-    --ink: #17181a;
-    --ball: #c4570f;
-    --size: 28px;
+    --ink: #f5f5f5;
+    --ball: #e2701c;
+    --size: 20px;
     display: inline-flex;
     align-items: center;
     gap: calc(var(--size) * 0.34);
-    background: #fff;
-    border-radius: calc(var(--size) * 0.25);
-    padding: calc(var(--size) * 0.34) calc(var(--size) * 0.5);
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
     font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
     font-weight: 600;
     font-size: var(--size);
@@ -71,13 +71,9 @@ body {
     transform: scaleX(0.52);
 }
 .nbagrid-logo.on-light {
-    background: var(--ink);
-    color: #fff;
-    --ball: #e2701c;
+    color: #17181a;
+    --ball: #c4570f;
 }
-.nbagrid-logo.on-light .nbagrid-ball b,
-.nbagrid-logo.on-light .nbagrid-ball u { background: var(--ink); }
-.nbagrid-logo.on-light .nbagrid-ball s { border-color: var(--ink); }
 
 .logo-wordmark {
     font-family: 'Barlow Condensed', sans-serif;
