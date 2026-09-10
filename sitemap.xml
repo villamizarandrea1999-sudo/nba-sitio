@@ -121,6 +121,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://nba-grid.com/blog/shortest-nba-player/</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/blog/nba-mock-draft-2026/</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/blog/nba-expansion-seattle-las-vegas/</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://nba-grid.com/blog/nba-fantasy-schedule-grid/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>daily</changefreq>
