@@ -188,8 +188,8 @@
 </header>
 <main class="max-w-container-max mx-auto px-grid-margin py-md">
 <!-- Hero Section -->
-<section style="display:grid;grid-template-columns:1fr 375px;gap:16px;align-items:stretch" class="grid-cols-1 lg:grid-cols-[1fr_375px] mb-xl">
-<div style="display:flex;flex-direction:column;gap:16px">
+<section class="mb-xl">
+<div style="display:grid;grid-template-columns:1fr 375px;gap:16px;align-items:stretch" class="grid-cols-1 lg:grid-cols-[1fr_375px]">
 <div style="display:grid;grid-template-columns:1fr 330px;gap:16px;align-items:start" class="grid-cols-1 md:grid-cols-[1fr_330px]">
 <a href="#daily-grid" style="position:relative;display:block;border-radius:6px;overflow:hidden;background:#111827;height:440px;color:#fff">
 <img src="assets/images/hero-dunk.jpg" alt="A professional basketball player performing a powerful slam dunk" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
@@ -230,6 +230,59 @@
 </a>
 </div>
 </div>
+<div style="background:#0d1418;border-radius:6px;padding:20px 20px 8px;flex:1;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:10px;color:#fff">
+<span style="width:11px;height:11px;border-radius:50%;background:#ef7f1a;flex:none"></span>
+<span style="font-size:18px;font-weight:800;letter-spacing:.02em;white-space:nowrap;font-family:'Bricolage Grotesque',sans-serif">LIVE SCOREBOARD</span>
+<span style="margin-left:auto;color:#9ca3af">→</span>
+</div>
+<div style="padding:16px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#9ca3af;margin-bottom:12px">WESTERN CONFERENCE</div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+<span style="width:20px;height:20px;border-radius:4px;background:#fdb927;flex:none"></span>
+<span style="color:#fff;font-size:15px;font-weight:600;white-space:nowrap">L.A. Lakers</span>
+<span style="margin-left:auto;color:#fff;font-size:15px;font-weight:700">112</span>
+<span style="color:#9ca3af;font-size:12px;width:70px;text-align:right">4Q 2:14</span>
+</div>
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:20px;height:20px;border-radius:4px;background:#1d428a;flex:none"></span>
+<span style="color:#e5e7eb;font-size:15px;white-space:nowrap">Golden State</span>
+<span style="margin-left:auto;color:#e5e7eb;font-size:15px;font-weight:700">108</span>
+<span style="width:70px"></span>
+</div>
+</div>
+<div style="padding:16px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#9ca3af;margin-bottom:12px">EASTERN CONFERENCE</div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+<span style="width:20px;height:20px;border-radius:4px;background:#007a33;flex:none"></span>
+<span style="color:#fff;font-size:15px;font-weight:600;white-space:nowrap">Boston</span>
+<span style="margin-left:auto;color:#fff;font-size:15px;font-weight:700">124</span>
+<span style="color:#9ca3af;font-size:12px;width:70px;text-align:right">Final</span>
+</div>
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:20px;height:20px;border-radius:4px;background:#006bb6;flex:none"></span>
+<span style="color:#e5e7eb;font-size:15px;white-space:nowrap">Philadelphia</span>
+<span style="margin-left:auto;color:#e5e7eb;font-size:15px;font-weight:700">101</span>
+<span style="width:70px"></span>
+</div>
+</div>
+<div style="padding:16px 0 8px">
+<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#9ca3af;margin-bottom:12px">UPCOMING</div>
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+<span style="width:20px;height:20px;border-radius:4px;background:#e56020;flex:none"></span>
+<span style="color:#fff;font-size:15px;font-weight:600;white-space:nowrap">Phoenix</span>
+<span style="margin-left:auto;color:#9ca3af;font-size:12px">10:30 PM ET</span>
+</div>
+<div style="display:flex;align-items:center;gap:12px">
+<span style="width:20px;height:20px;border-radius:4px;background:#0e2240;flex:none"></span>
+<span style="color:#e5e7eb;font-size:15px;white-space:nowrap">Denver</span>
+</div>
+</div>
+<a href="nba-games/" style="display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12);color:#fff;font-size:15px;font-weight:600;white-space:nowrap">See all scores →</a>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 375px;gap:16px;align-items:stretch" class="grid-cols-1 lg:grid-cols-[1fr_375px]">
+<div style="display:flex;flex-direction:column;gap:16px">
 <!-- Category Icon Nav -->
 <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-bottom:1px solid #e5e7eb;background:#fff;border-radius:6px 6px 0 0" class="grid-cols-3 md:grid-cols-6">
 <a href="nba-games/" style="display:flex;flex-direction:column;align-items:center;gap:9px;padding:18px 8px;border-bottom:3px solid #c2620f;color:#111827;font-size:14px;font-weight:700">
@@ -316,56 +369,6 @@ Guides
 </section>
 </div>
 <div style="display:flex;flex-direction:column;gap:16px">
-<div style="background:#0d1418;border-radius:6px;padding:20px 20px 8px">
-<div style="display:flex;align-items:center;gap:10px;color:#fff">
-<span style="width:11px;height:11px;border-radius:50%;background:#ef7f1a;flex:none"></span>
-<span style="font-size:18px;font-weight:800;letter-spacing:.02em;white-space:nowrap;font-family:'Bricolage Grotesque',sans-serif">LIVE SCOREBOARD</span>
-<span style="margin-left:auto;color:#9ca3af">→</span>
-</div>
-<div style="padding:16px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)">
-<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#9ca3af;margin-bottom:12px">WESTERN CONFERENCE</div>
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-<span style="width:20px;height:20px;border-radius:4px;background:#fdb927;flex:none"></span>
-<span style="color:#fff;font-size:15px;font-weight:600;white-space:nowrap">L.A. Lakers</span>
-<span style="margin-left:auto;color:#fff;font-size:15px;font-weight:700">112</span>
-<span style="color:#9ca3af;font-size:12px;width:70px;text-align:right">4Q 2:14</span>
-</div>
-<div style="display:flex;align-items:center;gap:12px">
-<span style="width:20px;height:20px;border-radius:4px;background:#1d428a;flex:none"></span>
-<span style="color:#e5e7eb;font-size:15px;white-space:nowrap">Golden State</span>
-<span style="margin-left:auto;color:#e5e7eb;font-size:15px;font-weight:700">108</span>
-<span style="width:70px"></span>
-</div>
-</div>
-<div style="padding:16px 0 8px;border-bottom:1px solid rgba(255,255,255,.08)">
-<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#9ca3af;margin-bottom:12px">EASTERN CONFERENCE</div>
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-<span style="width:20px;height:20px;border-radius:4px;background:#007a33;flex:none"></span>
-<span style="color:#fff;font-size:15px;font-weight:600;white-space:nowrap">Boston</span>
-<span style="margin-left:auto;color:#fff;font-size:15px;font-weight:700">124</span>
-<span style="color:#9ca3af;font-size:12px;width:70px;text-align:right">Final</span>
-</div>
-<div style="display:flex;align-items:center;gap:12px">
-<span style="width:20px;height:20px;border-radius:4px;background:#006bb6;flex:none"></span>
-<span style="color:#e5e7eb;font-size:15px;white-space:nowrap">Philadelphia</span>
-<span style="margin-left:auto;color:#e5e7eb;font-size:15px;font-weight:700">101</span>
-<span style="width:70px"></span>
-</div>
-</div>
-<div style="padding:16px 0 8px">
-<div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#9ca3af;margin-bottom:12px">UPCOMING</div>
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
-<span style="width:20px;height:20px;border-radius:4px;background:#e56020;flex:none"></span>
-<span style="color:#fff;font-size:15px;font-weight:600;white-space:nowrap">Phoenix</span>
-<span style="margin-left:auto;color:#9ca3af;font-size:12px">10:30 PM ET</span>
-</div>
-<div style="display:flex;align-items:center;gap:12px">
-<span style="width:20px;height:20px;border-radius:4px;background:#0e2240;flex:none"></span>
-<span style="color:#e5e7eb;font-size:15px;white-space:nowrap">Denver</span>
-</div>
-</div>
-<a href="nba-games/" style="display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid rgba(255,255,255,.12);color:#fff;font-size:15px;font-weight:600;white-space:nowrap">See all scores →</a>
-</div>
 <div style="background:#0d1418;border-radius:6px;padding:20px">
 <div style="display:flex;align-items:center;gap:10px;color:#fff">
 <span style="width:24px;height:24px;border-radius:5px;background:#c2620f;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex:none">01</span>
