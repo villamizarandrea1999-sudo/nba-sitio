@@ -638,3 +638,13 @@ body {
     background: #e2e2e2;
     border: 2px solid rgba(150, 73, 0, 0.2);
 }
+
+/* Fix: inline grid-template-columns on the homepage hero/sidebar grids
+   overrides the responsive Tailwind classes at any viewport, which was
+   squeezing the hero image and article columns to ~0px on mobile. */
+@media (max-width: 767px) {
+    .md\:grid-cols-\[1fr_330px\] { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 1023px) {
+    .lg\:grid-cols-\[1fr_375px\] { grid-template-columns: 1fr !important; }
+}
