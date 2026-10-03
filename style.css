@@ -244,6 +244,65 @@ body {
     display: block;
     margin-bottom: 8px;
 }
+.stat-table-wrap {
+    overflow-x: auto;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    background: #ffffff;
+}
+.stat-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+.stat-table thead tr {
+    background: #1a1c1c;
+}
+.stat-table th {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #f9f9f9;
+    padding: 12px 16px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.stat-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #ececec;
+    color: #1a1c1c;
+    vertical-align: middle;
+}
+.stat-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.stat-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+.stat-table tbody tr:hover {
+    background: #fdf1e6;
+}
+.stat-table tbody tr.stat-table-top {
+    background: #fdf1e6;
+    box-shadow: inset 4px 0 0 0 #964900;
+}
+.stat-table .stat-rank {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 700;
+    font-size: 13px;
+    color: #964900;
+    text-align: center;
+}
+.stat-table .font-mono-num {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    white-space: nowrap;
+}
+@media (max-width: 640px) {
+    .stat-table { font-size: 13px; }
+    .stat-table th, .stat-table td { padding: 10px 10px; }
+}
 .article-author-box {
     display: flex;
     align-items: center;
