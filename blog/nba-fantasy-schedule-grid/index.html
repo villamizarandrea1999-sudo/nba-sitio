@@ -113,7 +113,7 @@
 <a href="/blog/kobe-nba-logo/">Kobe NBA Logo Campaign</a>
 <a href="/blog/nba-mascots/">NBA Mascots</a>
 <a href="/blog/wilson-nba-drv-basketball/">Wilson NBA DRV Basketball</a>
-<a href="/blog/lebron-james-76ers-debut/">LeBron James Debuta con los 76ers</a>
+<a href="/blog/lebron-james-76ers-debut/">LeBron James Makes 76ers Debut</a>
 <a href="/blog/stephen-curry-warriors-extension/">Stephen Curry Signs Warriors Extension</a>
 <a href="/blog/buddy-hield-bulls-hornets-trade/">Bulls-Hornets Trade: Hield for Dillingham</a>
 <a href="/blog/nba-fantasy-schedule-grid/">NBA Schedule Grid (Fantasy)</a>
@@ -123,6 +123,9 @@
 <label for="mobile-nav-toggle" class="lg:hidden flex items-center justify-center w-10 h-10 text-surface cursor-pointer">
 <span class="material-symbols-outlined">menu</span>
 </label>
+<button id="search-trigger" class="text-surface hover:text-primary transition-colors p-2" aria-label="Search">
+<span class="material-symbols-outlined">search</span>
+</button>
 </div>
 </header>
 <main class="max-w-container-max mx-auto px-grid-margin py-md">
@@ -312,4 +315,15 @@
   });
 })();
 </script>
+<div id="search-overlay" class="search-overlay">
+<div class="search-panel">
+<div class="search-input-row">
+<span class="material-symbols-outlined">search</span>
+<input type="text" id="search-input" placeholder="Search NBA GRID..." autocomplete="off"/>
+<button id="search-close" class="search-close-btn" aria-label="Close search"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="search-results" class="search-results"></div>
+</div>
+</div>
+<script src="../../script.js"></script>
 </body></html>

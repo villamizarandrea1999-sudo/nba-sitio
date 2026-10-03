@@ -10,12 +10,14 @@ document.querySelectorAll('article').forEach(card => {
 
 // Simple ticker stop/start on hover
 const ticker = document.querySelector('.animate-ticker');
-ticker.addEventListener('mouseenter', () => {
-    ticker.style.animationPlayState = 'paused';
-});
-ticker.addEventListener('mouseleave', () => {
-    ticker.style.animationPlayState = 'running';
-});
+if (ticker) {
+    ticker.addEventListener('mouseenter', () => {
+        ticker.style.animationPlayState = 'paused';
+    });
+    ticker.addEventListener('mouseleave', () => {
+        ticker.style.animationPlayState = 'running';
+    });
+}
 
 // NBA Daily Grid (Connections-style puzzle)
 const gridCategories = [
@@ -193,3 +195,97 @@ if (gridEl) {
     updateMistakesDisplay();
     renderGrid();
 }
+
+// Site search
+(function () {
+    const trigger = document.getElementById('search-trigger');
+    const overlay = document.getElementById('search-overlay');
+    if (!trigger || !overlay) return;
+
+    const input = document.getElementById('search-input');
+    const resultsEl = document.getElementById('search-results');
+    const closeBtn = document.getElementById('search-close');
+
+    let indexData = null;
+    let indexPromise = null;
+
+    function loadIndex() {
+        if (!indexPromise) {
+            indexPromise = fetch('/search-index.json')
+                .then((r) => r.json())
+                .then((data) => {
+                    indexData = data;
+                    return data;
+                })
+                .catch(() => {
+                    resultsEl.innerHTML = '<p class="search-empty">Search is unavailable right now.</p>';
+                    return [];
+                });
+        }
+        return indexPromise;
+    }
+
+    function escapeHtml(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function render(results, query) {
+        if (!query) {
+            resultsEl.innerHTML = '';
+            return;
+        }
+        if (results.length === 0) {
+            resultsEl.innerHTML = '<p class="search-empty">No results for "' + escapeHtml(query) + '"</p>';
+            return;
+        }
+        resultsEl.innerHTML = results
+            .slice(0, 8)
+            .map(
+                (r) =>
+                    '<a class="search-result" href="' + r.url + '">' +
+                    '<span class="search-result-title">' + escapeHtml(r.title) + '</span>' +
+                    '<span class="search-result-desc">' + escapeHtml(r.description) + '</span>' +
+                    '</a>'
+            )
+            .join('');
+    }
+
+    function openSearch() {
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        loadIndex();
+        setTimeout(() => input.focus(), 10);
+    }
+
+    function closeSearch() {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+        input.value = '';
+        resultsEl.innerHTML = '';
+    }
+
+    trigger.addEventListener('click', openSearch);
+    if (closeBtn) closeBtn.addEventListener('click', closeSearch);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeSearch();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeSearch();
+    });
+
+    input.addEventListener('input', () => {
+        const q = input.value.trim().toLowerCase();
+        if (!q) {
+            resultsEl.innerHTML = '';
+            return;
+        }
+        loadIndex().then((data) => {
+            const results = data.filter(
+                (item) =>
+                    item.title.toLowerCase().includes(q) ||
+                    item.description.toLowerCase().includes(q)
+            );
+            render(results, q);
+        });
+    });
+})();
