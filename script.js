@@ -289,3 +289,24 @@ if (gridEl) {
         });
     });
 })();
+
+// Back to top button
+(function () {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    function toggleVisibility() {
+        if (window.scrollY > 500) {
+            btn.classList.add('is-visible');
+        } else {
+            btn.classList.remove('is-visible');
+        }
+    }
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    toggleVisibility();
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+})();
