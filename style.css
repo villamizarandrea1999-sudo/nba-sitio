@@ -303,35 +303,40 @@ body {
     .stat-table { font-size: 13px; }
     .stat-table th, .stat-table td { padding: 10px 10px; }
 }
+.search-wrap {
+    position: relative;
+    display: inline-flex;
+}
 .search-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(26, 28, 28, 0.75);
-    z-index: 100;
-    display: none;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 80px 20px 20px;
-}
-.search-overlay.is-open {
-    display: flex;
-}
-.search-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    width: 340px;
+    max-width: calc(100vw - 32px);
     background: #ffffff;
     border-radius: 12px;
-    width: 100%;
-    max-width: 560px;
-    max-height: 70vh;
+    max-height: 60vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+    z-index: 70;
+}
+.search-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 .search-input-row {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 16px;
+    padding: 14px 16px;
     border-bottom: 1px solid #ececec;
     flex: none;
 }

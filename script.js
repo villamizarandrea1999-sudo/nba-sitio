@@ -252,22 +252,29 @@ if (gridEl) {
 
     function openSearch() {
         overlay.classList.add('is-open');
-        document.body.style.overflow = 'hidden';
         loadIndex();
         setTimeout(() => input.focus(), 10);
     }
 
     function closeSearch() {
         overlay.classList.remove('is-open');
-        document.body.style.overflow = '';
         input.value = '';
         resultsEl.innerHTML = '';
     }
 
-    trigger.addEventListener('click', openSearch);
+    trigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (overlay.classList.contains('is-open')) {
+            closeSearch();
+        } else {
+            openSearch();
+        }
+    });
     if (closeBtn) closeBtn.addEventListener('click', closeSearch);
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) closeSearch();
+    document.addEventListener('click', (e) => {
+        if (overlay.classList.contains('is-open') && !overlay.contains(e.target) && e.target !== trigger) {
+            closeSearch();
+        }
     });
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeSearch();

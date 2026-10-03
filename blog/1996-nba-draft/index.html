@@ -124,9 +124,21 @@
 <span class="material-symbols-outlined">menu</span>
 </label>
 <div class="flex items-center space-x-sm">
+<div class="search-wrap">
 <button id="search-trigger" class="text-surface hover:text-primary transition-colors p-2" aria-label="Search">
 <span class="material-symbols-outlined">search</span>
 </button>
+<div id="search-overlay" class="search-overlay">
+<div class="search-panel">
+<div class="search-input-row">
+<span class="material-symbols-outlined">search</span>
+<input type="text" id="search-input" placeholder="Search NBA GRID..." autocomplete="off"/>
+<button id="search-close" class="search-close-btn" aria-label="Close search"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div id="search-results" class="search-results"></div>
+</div>
+</div>
+</div>
 <button class="text-surface hover:text-primary transition-colors p-2">
 <span class="material-symbols-outlined">account_circle</span>
 </button>
@@ -352,16 +364,6 @@
 <span class="material-symbols-outlined">confirmation_number</span>
 <span class="font-label-caps text-[10px]">Tickets</span>
 </a>
-</div>
-<div id="search-overlay" class="search-overlay">
-<div class="search-panel">
-<div class="search-input-row">
-<span class="material-symbols-outlined">search</span>
-<input type="text" id="search-input" placeholder="Search NBA GRID..." autocomplete="off"/>
-<button id="search-close" class="search-close-btn" aria-label="Close search"><span class="material-symbols-outlined">close</span></button>
-</div>
-<div id="search-results" class="search-results"></div>
-</div>
 </div>
 <button id="back-to-top" class="back-to-top" aria-label="Back to top"><span class="material-symbols-outlined">arrow_upward</span></button>
 <script src="../../script.js"></script>
