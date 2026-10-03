@@ -170,9 +170,21 @@
   </url>
   <url>
     <loc>https://nba-grid.com/blog/shortest-nba-player/</loc>
-    <lastmod>2026-09-09</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/blog/stephen-curry-warriors-extension/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/blog/buddy-hield-bulls-hornets-trade/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://nba-grid.com/blog/nba-mock-draft-2026/</loc>
