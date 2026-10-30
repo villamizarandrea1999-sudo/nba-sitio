@@ -1,18 +1,18 @@
-// Placeholder birthday dataset — replace with a live NBA data feed later.
+// Birthday dataset for a selection of the league's biggest stars — replace with a live NBA data feed later.
 // month/day are 1-indexed real-world birthdates. nbaId is the official NBA.com
 // stats player ID, used to load the headshot from the public NBA CDN.
 const nbaBirthdays = [
-    { name: 'LeBron James', team: 'Lakers', month: 12, day: 30, year: 1984, nbaId: 2544 },
+    { name: 'LeBron James', team: '76ers', month: 12, day: 30, year: 1984, nbaId: 2544 },
     { name: 'Stephen Curry', team: 'Warriors', month: 3, day: 14, year: 1988, nbaId: 201939 },
     { name: 'Kevin Durant', team: 'Suns', month: 9, day: 29, year: 1988, nbaId: 201142 },
-    { name: 'Giannis Antetokounmpo', team: 'Bucks', month: 12, day: 6, year: 1994, nbaId: 203507 },
+    { name: 'Giannis Antetokounmpo', team: 'Heat', month: 12, day: 6, year: 1994, nbaId: 203507 },
     { name: 'Nikola Jokic', team: 'Nuggets', month: 2, day: 19, year: 1995, nbaId: 203999 },
     { name: 'Luka Doncic', team: 'Lakers', month: 2, day: 28, year: 1999, nbaId: 1629029 },
     { name: 'Joel Embiid', team: '76ers', month: 3, day: 16, year: 1994, nbaId: 203954 },
     { name: 'Jayson Tatum', team: 'Celtics', month: 3, day: 3, year: 1998, nbaId: 1628369 },
     { name: 'Devin Booker', team: 'Suns', month: 10, day: 30, year: 1996, nbaId: 1626164 },
     { name: 'Damian Lillard', team: 'Bucks', month: 7, day: 15, year: 1990, nbaId: 203081 },
-    { name: 'Anthony Davis', team: 'Mavericks', month: 3, day: 11, year: 1993, nbaId: 203076 },
+    { name: 'Anthony Davis', team: 'Wizards', month: 3, day: 11, year: 1993, nbaId: 203076 },
     { name: 'Ja Morant', team: 'Grizzlies', month: 8, day: 10, year: 1999, nbaId: 1629630 },
     { name: 'Trae Young', team: 'Hawks', month: 9, day: 19, year: 1998, nbaId: 1629027 },
     { name: 'Zion Williamson', team: 'Pelicans', month: 7, day: 6, year: 2000, nbaId: 1629627 },
@@ -20,7 +20,7 @@ const nbaBirthdays = [
     { name: 'Donovan Mitchell', team: 'Cavaliers', month: 9, day: 7, year: 1996, nbaId: 1628378 },
     { name: 'Jaylen Brown', team: 'Celtics', month: 10, day: 24, year: 1996, nbaId: 1627759 },
     { name: 'Kawhi Leonard', team: 'Clippers', month: 6, day: 29, year: 1991, nbaId: 202695 },
-    { name: 'Paul George', team: 'Sixers', month: 5, day: 2, year: 1990, nbaId: 202331 },
+    { name: 'Paul George', team: '76ers', month: 5, day: 2, year: 1990, nbaId: 202331 },
     { name: 'James Harden', team: 'Clippers', month: 8, day: 26, year: 1989, nbaId: 201935 },
     { name: 'Kyrie Irving', team: 'Mavericks', month: 3, day: 23, year: 1992, nbaId: 202681 },
     { name: 'Klay Thompson', team: 'Mavericks', month: 2, day: 8, year: 1990, nbaId: 202691 },
@@ -93,31 +93,48 @@ function headshotUrl(nbaId) {
     return `https://cdn.nba.com/headshots/nba/latest/1040x760/${nbaId}.png`;
 }
 
+// Next occurrence of a birthday on or after today, plus the age the player turns then
+function nextBirthday(p) {
+    const start = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    let next = new Date(today.getFullYear(), p.month - 1, p.day);
+    if (next < start) next = new Date(today.getFullYear() + 1, p.month - 1, p.day);
+    return { date: next, daysAway: Math.round((next - start) / 86400000), age: next.getFullYear() - p.year };
+}
+
+function birthdayCard(p, detail) {
+    const zodiac = getZodiacSign(p.month, p.day);
+    return `
+        <div class="birthday-card">
+            <img
+                class="birthday-photo"
+                src="${headshotUrl(p.nbaId)}"
+                alt="${p.name}"
+                loading="lazy"
+                onerror="this.replaceWith(Object.assign(document.createElement('div'), { className: 'birthday-avatar', textContent: '${initials(p.name)}' }))"
+            />
+            <div>
+                <h3 class="font-headline-md text-[18px] uppercase leading-tight">${p.name}</h3>
+                <p class="font-label-caps text-xs text-primary mt-1">${p.team.toUpperCase()}</p>
+                <p class="text-on-surface-variant text-body-md mt-1">${detail} · ${zodiac.emoji} ${zodiac.sign}</p>
+            </div>
+        </div>`;
+}
+
 if (todaysBirthdays.length === 0) {
+    const upcoming = nbaBirthdays
+        .map(p => ({ p, next: nextBirthday(p) }))
+        .sort((a, b) => a.next.daysAway - b.next.daysAway)
+        .slice(0, 6);
     listEl.innerHTML = `
         <div class="today-card md:col-span-2 lg:col-span-3">
-            <div class="today-card-icon"><span class="material-symbols-outlined">event_busy</span></div>
-            <h3 class="font-headline-md text-[22px] mb-sm uppercase">No Birthdays Found Today</h3>
-            <p class="text-on-surface-variant text-body-md">Check back tomorrow — this section refreshes daily. Below is our current placeholder database sample.</p>
-        </div>`;
+            <div class="today-card-icon"><span class="material-symbols-outlined">event_upcoming</span></div>
+            <h3 class="font-headline-md text-[22px] mb-sm uppercase">No Star Birthdays Today</h3>
+            <p class="text-on-surface-variant text-body-md">None of the stars we track has a birthday today. Here's who's celebrating next.</p>
+        </div>` + upcoming.map(({ p, next }) =>
+            birthdayCard(p, `Turns ${next.age} on ${monthNames[next.date.getMonth()]} ${next.date.getDate()}`)
+        ).join('');
 } else {
-    listEl.innerHTML = todaysBirthdays.map(p => {
-        const turningAge = today.getFullYear() - p.year;
-        const zodiac = getZodiacSign(p.month, p.day);
-        return `
-            <div class="birthday-card">
-                <img
-                    class="birthday-photo"
-                    src="${headshotUrl(p.nbaId)}"
-                    alt="${p.name}"
-                    loading="lazy"
-                    onerror="this.replaceWith(Object.assign(document.createElement('div'), { className: 'birthday-avatar', textContent: '${initials(p.name)}' }))"
-                />
-                <div>
-                    <h3 class="font-headline-md text-[18px] uppercase leading-tight">${p.name}</h3>
-                    <p class="font-label-caps text-xs text-primary mt-1">${p.team.toUpperCase()}</p>
-                    <p class="text-on-surface-variant text-body-md mt-1">Turns ${turningAge} today · ${zodiac.emoji} ${zodiac.sign}</p>
-                </div>
-            </div>`;
-    }).join('');
+    listEl.innerHTML = todaysBirthdays.map(p =>
+        birthdayCard(p, `Turns ${today.getFullYear() - p.year} today`)
+    ).join('');
 }

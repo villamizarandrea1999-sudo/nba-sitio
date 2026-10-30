@@ -24,7 +24,7 @@ const gridCategories = [
     { id: 1, name: 'CURRENT MVP CANDIDATES', className: 'grid-cat-1', items: ['JOKIC', 'DONCIC', 'GIANNIS', 'SHAI'] },
     { id: 2, name: '2020s CHAMPIONS', className: 'grid-cat-2', items: ['LAKERS', 'BUCKS', 'WARRIORS', 'NUGGETS'] },
     { id: 3, name: 'HALL OF FAME CENTERS', className: 'grid-cat-3', items: ['KAREEM', 'SHAQ', 'OLAJUWON', 'RUSSELL'] },
-    { id: 4, name: 'WORE NUMBER 23', className: 'grid-cat-4', items: ['JORDAN', 'LEBRON', 'DRAYMOND', 'ANTETOKOUNMPO'] },
+    { id: 4, name: 'WORE NUMBER 23', className: 'grid-cat-4', items: ['JORDAN', 'LEBRON', 'DRAYMOND', 'DAVIS'] },
 ];
 
 const gridEl = document.getElementById('nba-grid');

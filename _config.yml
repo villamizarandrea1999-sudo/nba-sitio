@@ -1,0 +1,12 @@
+# GitHub Pages (Jekyll) settings.
+# Keep internal notes, build tooling and scripts in the repo but off the live site.
+exclude:
+  - SEO_MAPA_CONTENIDOS.md
+  - noticias-agosto-2026/
+  - scripts/
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - tailwind-config.js
+  - tailwind-input.css
+  - tailwind.config.build.js
