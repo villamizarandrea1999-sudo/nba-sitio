@@ -191,6 +191,9 @@ body {
     margin-bottom: 32px;
 }
 .editorial-article img.hero-image {
+    max-height: 520px;
+    object-fit: cover;
+    height: auto;
     width: 100%;
     border-radius: 8px;
 }
