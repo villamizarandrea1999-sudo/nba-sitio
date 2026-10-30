@@ -20,12 +20,117 @@ if (ticker) {
 }
 
 // NBA Daily Grid (Connections-style puzzle)
-const gridCategories = [
-    { id: 1, name: 'CURRENT MVP CANDIDATES', className: 'grid-cat-1', items: ['JOKIC', 'DONCIC', 'GIANNIS', 'SHAI'] },
-    { id: 2, name: '2020s CHAMPIONS', className: 'grid-cat-2', items: ['LAKERS', 'BUCKS', 'WARRIORS', 'NUGGETS'] },
-    { id: 3, name: 'HALL OF FAME CENTERS', className: 'grid-cat-3', items: ['KAREEM', 'SHAQ', 'OLAJUWON', 'RUSSELL'] },
-    { id: 4, name: 'WORE NUMBER 23', className: 'grid-cat-4', items: ['JORDAN', 'LEBRON', 'DRAYMOND', 'DAVIS'] },
+// Puzzle bank: one puzzle per day, rotating by the player's local date.
+// Rules for new puzzles: stable historical facts only (no "current roster" facts),
+// 16 unique tiles, and every tile must fit exactly one of its puzzle's four groups.
+const gridPuzzles = [
+    [['2023-24 ALL-NBA FIRST TEAM', ['JOKIC', 'DONCIC', 'GIANNIS', 'SHAI']],
+     ['2020s CHAMPIONS', ['LAKERS', 'BUCKS', 'WARRIORS', 'NUGGETS']],
+     ['HALL OF FAME CENTERS', ['KAREEM', 'SHAQ', 'OLAJUWON', 'RUSSELL']],
+     ['WORE NUMBER 23', ['JORDAN', 'LEBRON', 'DRAYMOND', 'DAVIS']]],
+    [['TEAM NAMES NOT ENDING IN S', ['HEAT', 'MAGIC', 'JAZZ', 'THUNDER']],
+     ['OLD FRANCHISE NAMES', ['BULLETS', 'SUPERSONICS', 'BOBCATS', 'BRAVES']],
+     ['NO. 1 OVERALL PICKS', ['DUNCAN', 'WEMBANYAMA', 'EDWARDS', 'GRIFFIN']],
+     ['PLAYED AT GEORGETOWN', ['MOURNING', 'MUTOMBO', 'IVERSON', 'PORTER']]],
+    [['CALIFORNIA TEAMS', ['LAKERS', 'CLIPPERS', 'WARRIORS', 'KINGS']],
+     ['THREE-POINT CONTEST WINNERS', ['BIRD', 'CURRY', 'LILLARD', 'BOOKER']],
+     ['DUNK CONTEST WINNERS', ['CARTER', 'WILKINS', 'LAVINE', 'GRIFFIN']],
+     ['DEFENSIVE PLAYER OF THE YEAR', ['MUTOMBO', 'GOBERT', 'RODMAN', 'SMART']]],
+    [['PLAYED AT KENTUCKY', ['TOWNS', 'BOOKER', 'FOX', 'ADEBAYO']],
+     ['PLAYED AT DUKE', ['IRVING', 'TATUM', 'WILLIAMSON', 'BANCHERO']],
+     ['PLAYED AT NORTH CAROLINA', ['JORDAN', 'CARTER', 'WORTHY', 'JAMISON']],
+     ['PLAYED AT UCLA', ['KAREEM', 'WALTON', 'WESTBROOK', 'LOVE']]],
+    [['DRAFTED STRAIGHT FROM HIGH SCHOOL', ['GARNETT', 'STOUDEMIRE', 'MCGRADY', 'HOWARD']],
+     ['TWO-TIME FINALS MVPS', ['DURANT', 'LEONARD', 'BIRD', 'OLAJUWON']],
+     ['HALL OF FAME NICKNAMES', ['THE MAILMAN', 'THE ADMIRAL', 'THE GLOVE', 'THE ANSWER']],
+     ['SIXTH MAN OF THE YEAR', ['GINOBILI', 'CRAWFORD', 'HARDEN', 'MCHALE']]],
+    [['ROOKIE OF THE YEAR', ['ROSE', 'LILLARD', 'MORANT', 'WEMBANYAMA']],
+     ['TEAMS NAMED AFTER ANIMALS', ['BULLS', 'RAPTORS', 'GRIZZLIES', 'PELICANS']],
+     ['CANADIAN PLAYERS', ['MURRAY', 'OLYNYK', 'BARRETT', 'NASH']],
+     ['COACHED 5+ TITLE TEAMS', ['JACKSON', 'AUERBACH', 'POPOVICH', 'RILEY']]],
+    [['SPANISH PLAYERS', ['GASOL', 'RUBIO', 'CALDERON', 'HERNANGOMEZ']],
+     ['FRENCH PLAYERS', ['WEMBANYAMA', 'GOBERT', 'PARKER', 'BATUM']],
+     ['AUSTRALIAN PLAYERS', ['GIDDEY', 'MILLS', 'BOGUT', 'INGLES']],
+     ['GERMAN PLAYERS', ['NOWITZKI', 'SCHRODER', 'WAGNER', 'THEIS']]],
+    [['WORE NUMBER 33', ['BIRD', 'EWING', 'PIPPEN', 'MOURNING']],
+     ['WORE NUMBER 32', ['MAGIC', 'MALONE', 'MCHALE', 'GRIFFIN']],
+     ['WORE NUMBER 34', ['OLAJUWON', 'BARKLEY', 'GIANNIS', 'PIERCE']],
+     ['WORE NUMBER 0', ['WESTBROOK', 'TATUM', 'LILLARD', 'ARENAS']]],
+    [['MVP WINNERS', ['ROSE', 'NOWITZKI', 'EMBIID', 'WESTBROOK']],
+     ['DEFENSIVE PLAYER OF THE YEAR', ['WALLACE', 'HOWARD', 'MUTOMBO', 'JACKSON']],
+     ['1996 DRAFT CLASS', ['ALLEN', 'STOJAKOVIC', 'MARBURY', 'WALKER']],
+     ['FRANCHISES THAT RELOCATED', ['GRIZZLIES', 'THUNDER', 'NETS', 'JAZZ']]],
+    [['NO. 1 OVERALL PICKS', ['YAO', 'ODEN', 'FULTZ', 'AYTON']],
+     ['2008 CELTICS CHAMPIONS', ['PIERCE', 'GARNETT', 'ALLEN', 'RONDO']],
+     ['2016 CAVALIERS CHAMPIONS', ['LOVE', 'THOMPSON', 'SMITH', 'SHUMPERT']],
+     ['2014 SPURS CHAMPIONS', ['PARKER', 'GINOBILI', 'LEONARD', 'DIAW']]],
+    [['WON 2+ SCORING TITLES', ['GERVIN', 'MCGRADY', 'HARDEN', 'DURANT']],
+     ['PLAYED AT KANSAS', ['PIERCE', 'WIGGINS', 'MANNING', 'CHALMERS']],
+     ['DUNK CONTEST WINNERS', ['HOWARD', 'WEBB', 'ROBINSON', 'MCCLUNG']],
+     ['CENTRAL DIVISION TEAMS', ['BULLS', 'CAVALIERS', 'PISTONS', 'PACERS']]],
+    [['5-FOOT-9 OR SHORTER', ['BOGUES', 'WEBB', 'ROBINSON', 'THOMAS']],
+     ['7-FOOT-4 OR TALLER', ['MURESAN', 'BOL', 'YAO', 'EDEY']],
+     ['THREE-POINT CONTEST WINNERS', ['ALLEN', 'NOWITZKI', 'IRVING', 'THOMPSON']],
+     ['SIXTH MAN OF THE YEAR', ['WILLIAMS', 'HERRO', 'CLARKSON', 'KUKOC']]],
+    [['FINALS MVPS', ['DUNCAN', 'PARKER', 'IGUODALA', 'BILLUPS']],
+     ['1995-96 BULLS', ['PIPPEN', 'RODMAN', 'KUKOC', 'KERR']],
+     ['PLAYED AT GONZAGA', ['STOCKTON', 'HACHIMURA', 'SABONIS', 'MORRISON']],
+     ['PLAYED AT MICHIGAN STATE', ['JOHNSON', 'GREEN', 'RICHARDSON', 'BRIDGES']]],
+    [['ATLANTIC DIVISION', ['CELTICS', 'NETS', '76ERS', 'RAPTORS']],
+     ['NORTHWEST DIVISION', ['NUGGETS', 'TIMBERWOLVES', 'BLAZERS', 'JAZZ']],
+     ['SOUTHWEST DIVISION', ['MAVERICKS', 'ROCKETS', 'PELICANS', 'SPURS']],
+     ['PACIFIC DIVISION', ['WARRIORS', 'LAKERS', 'SUNS', 'KINGS']]],
+    [['NICKNAMES', ['THE DREAM', 'THE BEARD', 'THE TRUTH', 'THE MAILMAN']],
+     ['HAD A BROTHER IN THE NBA', ['LOPEZ', 'MORRIS', 'HOLIDAY', 'BALL']],
+     ['SON OF AN NBA PLAYER', ['BRYANT', 'RIVERS', 'SABONIS', 'JAMES']],
+     ['SERBIAN PLAYERS', ['JOKIC', 'BOGDANOVIC', 'DIVAC', 'KRSTIC']]],
+    [['BACK-TO-BACK MVPS', ['NASH', 'CURRY', 'DUNCAN', 'JOKIC']],
+     ['BORN IN AFRICA', ['OLAJUWON', 'IBAKA', 'SIAKAM', 'DENG']],
+     ['PLAYED FOR THE 76ERS', ['IVERSON', 'ERVING', 'BARKLEY', 'SIMMONS']],
+     ['FORMER ABA TEAMS', ['NETS', 'PACERS', 'SPURS', 'NUGGETS']]],
+    [['TITLES WITH 3 DIFFERENT TEAMS', ['HORRY', 'GREEN', 'SALLEY', 'LEBRON']],
+     ['WON TITLES AS PLAYER AND COACH', ['KERR', 'JACKSON', 'RILEY', 'LUE']],
+     ['ONE-FRANCHISE CAREERS', ['NOWITZKI', 'DUNCAN', 'STOCKTON', 'MILLER']],
+     ['PLAYED AT VILLANOVA', ['BRUNSON', 'BRIDGES', 'DIVINCENZO', 'HART']]],
+    [['TEAM MASCOTS', ['BENNY', 'ROCKY', 'CLUTCH', 'BURNIE']],
+     ['HALL OF FAME POINT GUARDS', ['NASH', 'STOCKTON', 'PAYTON', 'THOMAS']],
+     ['MULTIPLE-TIME DPOY', ['MUTOMBO', 'WALLACE', 'GOBERT', 'HOWARD']],
+     ['ROOKIE OF THE YEAR', ['ROBINSON', 'DUNCAN', 'PAUL', 'ROY']]],
+    [['NBA AWARD NAMESAKES', ['HAVLICEK', 'MIKAN', 'AUERBACH', 'WEST']],
+     ['1992 DREAM TEAM', ['LAETTNER', 'MULLIN', 'DREXLER', 'PIPPEN']],
+     ['KNICKS LEGENDS', ['EWING', 'FRAZIER', 'REED', 'KING']],
+     ['SPURS LEGENDS', ['GERVIN', 'DUNCAN', 'GINOBILI', 'PARKER']]],
+    [['PLAYED FOR THE SUPERSONICS', ['PAYTON', 'KEMP', 'ALLEN', 'DURANT']],
+     ['PLAYED FOR VANCOUVER', ['ABDUR-RAHIM', 'BIBBY', 'REEVES', 'SWIFT']],
+     ['PLAYED FOR NEW JERSEY', ['KIDD', 'CARTER', 'MARTIN', 'PETROVIC']],
+     ['PLAYED FOR THE BOBCATS', ['WALKER', 'OKAFOR', 'WALLACE', 'FELTON']]],
+    [['SCORED 70+ IN A GAME', ['BOOKER', 'EMBIID', 'MITCHELL', 'ROBINSON']],
+     ['CELTICS LEGENDS', ['RUSSELL', 'COUSY', 'HAVLICEK', 'MCHALE']],
+     ['BULLS LEGENDS', ['PIPPEN', 'ROSE', 'GILMORE', 'NOAH']],
+     ['LAKERS LEGENDS', ['WEST', 'WORTHY', 'MIKAN', 'FISHER']]],
+    [['COACHED A TITLE TEAM', ['SPOELSTRA', 'CARLISLE', 'NURSE', 'VOGEL']],
+     ['MOST IMPROVED PLAYER', ['SIAKAM', 'RANDLE', 'MORANT', 'MAXEY']],
+     ['WARRIORS DYNASTY CORE', ['CURRY', 'THOMPSON', 'GREEN', 'IGUODALA']],
+     ['2024 CELTICS CHAMPIONS', ['TATUM', 'BROWN', 'HOLIDAY', 'WHITE']]],
+    [['UNDRAFTED', ['VANVLEET', 'CARUSO', 'REID', 'HASLEM']],
+     ['SECOND-ROUND PICKS', ['JOKIC', 'GREEN', 'ARENAS', 'GINOBILI']],
+     ['TOP-5 PICKS IN 2003 (NOT LEBRON)', ['MILICIC', 'ANTHONY', 'BOSH', 'WADE']],
+     ['2004 PISTONS CHAMPIONS', ['BILLUPS', 'HAMILTON', 'PRINCE', 'WALLACE']]],
+    [['ROOKIE OF THE YEAR', ['BANCHERO', 'BARNES', 'BALL', 'CASTLE']],
+     ['LAST NAMES THAT ARE COLORS', ['GREEN', 'WHITE', 'BROWN', 'BLACK']],
+     ['2025 THUNDER CHAMPIONS', ['SHAI', 'WILLIAMS', 'HOLMGREN', 'DORT']],
+     ['WORE NUMBER 1', ['MCGRADY', 'HARDAWAY', 'ROBERTSON', 'ROSE']]],
 ];
+
+// Day number counted from 2026-01-01 using the player's local calendar date
+function gridLocalDateKey(d) {
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+const gridNow = new Date();
+const gridDayNo = Math.max(1, Math.round((Date.UTC(gridNow.getFullYear(), gridNow.getMonth(), gridNow.getDate()) - Date.UTC(2026, 0, 1)) / 86400000) + 1);
+const gridCategories = gridPuzzles[(gridDayNo - 1) % gridPuzzles.length].map(([name, items], i) => (
+    { id: i + 1, name, className: `grid-cat-${i + 1}`, items }
+));
 
 const gridEl = document.getElementById('nba-grid');
 const solvedEl = document.getElementById('grid-solved');
@@ -47,10 +152,9 @@ if (gridEl) {
     let guessLog = [];
     let remainingCategories = JSON.parse(JSON.stringify(gridCategories));
 
-    // Puzzle number derived from today's date so it changes daily
-    const EPOCH = new Date('2026-01-01T00:00:00Z');
-    const todayKey = new Date().toISOString().slice(0, 10);
-    const puzzleNo = Math.max(1, Math.floor((new Date(todayKey) - EPOCH) / 86400000) + 1);
+    // Puzzle number follows the same local date that picked today's puzzle
+    const todayKey = gridLocalDateKey(gridNow);
+    const puzzleNo = gridDayNo;
     if (puzzleNoEl) puzzleNoEl.textContent = `GRID #${String(puzzleNo).padStart(3, '0')}`;
 
     // Daily streak tracking (localStorage)
@@ -60,7 +164,7 @@ if (gridEl) {
             if (streakCountEl) streakCountEl.textContent = data.current || 0;
             return;
         }
-        const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+        const yesterday = gridLocalDateKey(new Date(gridNow.getFullYear(), gridNow.getMonth(), gridNow.getDate() - 1));
         let current = won ? (data.lastPlayed === yesterday ? (data.current || 0) + 1 : 1) : 0;
         const best = Math.max(current, data.best || 0);
         localStorage.setItem('nbagrid-streak', JSON.stringify({ current, best, lastPlayed: todayKey }));
