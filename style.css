@@ -186,8 +186,9 @@ body {
     letter-spacing: 0.06em;
     color: #8a7264;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
+    gap: 4px 8px;
     margin-bottom: 32px;
 }
 .editorial-article img.hero-image {

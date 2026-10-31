@@ -209,9 +209,11 @@ async function main() {
     '\n' + tableHtml + '\n' +
     html.slice(endIdx);
 
+  // "Data checked", not "Updated": this runs nightly even when the schedule itself hasn't changed
+  const checkedOn = new Date(`${today}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
   html = html.replace(
     /<span id="sched-grid-updated">.*?<\/span>/,
-    `<span id="sched-grid-updated">Updated ${today}</span>`
+    `<span id="sched-grid-updated">Data checked <time datetime="${today}">${checkedOn}</time></span>`
   );
 
   fs.writeFileSync(TARGET_FILE, html, 'utf8');
