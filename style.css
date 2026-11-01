@@ -436,7 +436,7 @@ body {
 }
 .article-author-box {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
     background: #f3f3f3;
     border-radius: 16px;
@@ -471,6 +471,22 @@ body {
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
+}
+.article-author-box .author-bio {
+    font-size: 14px;
+    line-height: 1.55;
+    color: #3d3d3d;
+    margin: 8px 0 6px;
+}
+.article-author-box .author-more {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #964900;
+}
+.article-author-box .author-more:hover {
+    text-decoration: underline;
 }
 .article-author-box .author-role {
     font-family: "JetBrains Mono", monospace;

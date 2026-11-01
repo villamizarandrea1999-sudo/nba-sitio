@@ -1,0 +1,659 @@
+{
+  "_readme": [
+    "Raw follower counts for /most-followed-nba-players-social-media/. Build with: node scripts/social-followers/build.js",
+    "count: the exact follower number shown on the official profile (e.g. 159234567). Use \"none\" if the player has no account on that platform. null = not pulled yet (the build refuses to run).",
+    "handle: the official (verified) account handle, without @. Fix any handle marked in _verify after checking the profile.",
+    "team: current team on the pull date. Set team_checked to true once confirmed.",
+    "posts: unused (removed until each feed is reviewed by a person).",
+    "Keep each month's file in git history: that is the raw-count archive the brief asks for."
+  ],
+  "pulled_on": "2026-10-31",
+  "published": "2026-10-31",
+  "players": [
+    {
+      "name": "LeBron James",
+      "status": "active",
+      "born": "1984-12-30",
+      "team": "Philadelphia 76ers",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "kingjames",
+          "count": 153602788
+        },
+        "x": {
+          "handle": "KingJames",
+          "count": 55300000
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The NBA's all-time leading scorer is in his 24th season, his first with Philadelphia, after four championships and four MVP awards."
+    },
+    {
+      "name": "Stephen Curry",
+      "status": "active",
+      "born": "1988-03-14",
+      "team": "Golden State Warriors",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "stephencurry30",
+          "count": 56904107
+        },
+        "x": {
+          "handle": "StephenCurry30",
+          "count": 24600000
+        },
+        "tiktok": {
+          "handle": "stephencurry30",
+          "count": 9100000
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The NBA's all-time leader in made three-pointers has four championships and two MVPs, including the league's only unanimous MVP in 2016."
+    },
+    {
+      "name": "Kevin Durant",
+      "status": "active",
+      "born": "1988-09-29",
+      "team": "Houston Rockets",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "easymoneysniper",
+          "count": 13406755
+        },
+        "x": {
+          "handle": "KDTrey5",
+          "count": 26800000
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "A two-time champion and two-time Finals MVP, Durant won the 2014 MVP and is the only player with four Olympic gold medals in men's basketball."
+    },
+    {
+      "name": "Kyrie Irving",
+      "status": "active",
+      "born": "1992-03-23",
+      "team": "Dallas Mavericks",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "kyrieirving",
+          "count": 19787772
+        },
+        "x": {
+          "handle": "KyrieIrving",
+          "count": 4400000
+        },
+        "tiktok": {
+          "handle": "kyrieirving",
+          "count": 1400000
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "Irving hit the go-ahead three in Game 7 of the 2016 Finals, delivering Cleveland's only championship alongside LeBron James."
+    },
+    {
+      "name": "Giannis Antetokounmpo",
+      "status": "active",
+      "born": "1994-12-06",
+      "team": "Miami Heat",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "giannis_an34",
+          "count": 16070094
+        },
+        "x": {
+          "handle": "Giannis_An34",
+          "count": 3400000
+        },
+        "tiktok": {
+          "handle": "giannis_an34",
+          "count": 6300000
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The two-time MVP and 2021 Finals MVP was traded from Milwaukee to Miami this offseason, ending 13 seasons with the Bucks."
+    },
+    {
+      "name": "Luka Dončić",
+      "status": "active",
+      "born": "1999-02-28",
+      "team": "Los Angeles Lakers",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "lukadoncic",
+          "count": 10760202
+        },
+        "x": {
+          "handle": null,
+          "count": "none"
+        },
+        "tiktok": {
+          "handle": "lukadoncic",
+          "count": 2800000
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The six-time All-Star led the NBA in scoring last season and is now the face of the Lakers."
+    },
+    {
+      "name": "James Harden",
+      "status": "active",
+      "born": "1989-08-26",
+      "team": "Cleveland Cavaliers",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "jharden13",
+          "count": 11784011
+        },
+        "x": {
+          "handle": "JHarden13",
+          "count": 7300000
+        },
+        "tiktok": {
+          "handle": "jharden13",
+          "count": 643000
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The 2018 MVP has won three scoring titles and sits among the top players all time in made three-pointers."
+    },
+    {
+      "name": "Joel Embiid",
+      "status": "active",
+      "born": "1994-03-16",
+      "team": "Philadelphia 76ers",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "joelembiid",
+          "count": 7034037
+        },
+        "x": {
+          "handle": "JoelEmbiid",
+          "count": 2200000
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The 2023 MVP now shares the Sixers' locker room with LeBron James."
+    },
+    {
+      "name": "Ja Morant",
+      "status": "active",
+      "born": "1999-08-10",
+      "team": "Portland Trail Blazers",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "jamorant",
+          "count": 9262794
+        },
+        "x": {
+          "handle": "JaMorant",
+          "count": 3000000
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "Morant was the 2020 Rookie of the Year and the 2022 Most Improved Player."
+    },
+    {
+      "name": "Zion Williamson",
+      "status": "active",
+      "born": "2000-07-06",
+      "team": "New Orleans Pelicans",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "zionwilliamson",
+          "count": 4660992
+        },
+        "x": {
+          "handle": "Zionwilliamson",
+          "count": 634400
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The No. 1 pick in 2019 built a huge social following during his single season at Duke, before he had played an NBA game."
+    },
+    {
+      "name": "Jimmy Butler",
+      "status": "active",
+      "born": "1989-09-14",
+      "team": "Golden State Warriors",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "jimmybutler",
+          "count": 9767945
+        },
+        "x": {
+          "handle": "JimmyButler",
+          "count": 1100000
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "Butler led Miami to two NBA Finals before his 2025 trade to Golden State."
+    },
+    {
+      "name": "Anthony Davis",
+      "status": "active",
+      "born": "1993-03-11",
+      "team": "Washington Wizards",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "antdavis23",
+          "count": 6578938
+        },
+        "x": {
+          "handle": "AntDavis23",
+          "count": 2200000
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "Davis won the 2020 title with LeBron in Los Angeles and is a 10-time All-Star."
+    },
+    {
+      "name": "Jayson Tatum",
+      "status": "active",
+      "born": "1998-03-03",
+      "team": "Boston Celtics",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "jaytatum0",
+          "count": 7116163
+        },
+        "x": {
+          "handle": "jaytatum0",
+          "count": 1600000
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "Tatum led Boston to the 2024 championship."
+    },
+    {
+      "name": "Victor Wembanyama",
+      "status": "active",
+      "born": "2004-01-04",
+      "team": "San Antonio Spurs",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "wemby",
+          "count": 6262123
+        },
+        "x": {
+          "handle": null,
+          "count": "none"
+        },
+        "tiktok": {
+          "handle": "wemby",
+          "count": 1700000
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The 2023 No. 1 pick and 2024 Rookie of the Year is listed at 7'5\", the tallest active player in the league."
+    },
+    {
+      "name": "Anthony Edwards",
+      "status": "active",
+      "born": "2001-08-05",
+      "team": "Minnesota Timberwolves",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "theanthonyedwards_",
+          "count": 5562026
+        },
+        "x": {
+          "handle": null,
+          "count": "none"
+        },
+        "tiktok": {
+          "handle": "theanthonyedwards_",
+          "count": 1500000
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "Edwards won Olympic gold in 2024 and is recovering from knee surgery to start this season."
+    },
+    {
+      "name": "LaMelo Ball",
+      "status": "active",
+      "born": "2001-08-22",
+      "team": "Minnesota Timberwolves",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "melo",
+          "count": 10715325
+        },
+        "x": {
+          "handle": "MELOD1P",
+          "count": 1000000
+        },
+        "tiktok": {
+          "handle": "melo",
+          "count": 365200
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The 2021 Rookie of the Year built an online following in high school and now plays for Minnesota."
+    },
+    {
+      "name": "Bronny James",
+      "status": "active",
+      "born": "2004-10-06",
+      "team": "Los Angeles Lakers",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "bronny",
+          "count": 7367385
+        },
+        "x": {
+          "handle": null,
+          "count": "none"
+        },
+        "tiktok": {
+          "handle": "bronny",
+          "count": 6000000
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "In October 2024, Bronny and LeBron became the first father and son to play together in an NBA game."
+    },
+    {
+      "name": "Cooper Flagg",
+      "status": "active",
+      "born": "2006-12-21",
+      "team": "Dallas Mavericks",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "cooper_flagg",
+          "count": 1875594
+        },
+        "x": {
+          "handle": null,
+          "count": "none"
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The No. 1 pick in the 2025 draft went to Dallas after one season at Duke."
+    },
+    {
+      "name": "Paolo Banchero",
+      "status": "active",
+      "born": "2002-11-12",
+      "team": "Orlando Magic",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "paolo5",
+          "count": 1093868
+        },
+        "x": {
+          "handle": "Pp_doesit",
+          "count": 123100
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The 2022 No. 1 pick was the 2023 Rookie of the Year."
+    },
+    {
+      "name": "Cade Cunningham",
+      "status": "active",
+      "born": "2001-09-25",
+      "team": "Detroit Pistons",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "cadecunn1ngham",
+          "count": 1122357
+        },
+        "x": {
+          "handle": null,
+          "count": "none"
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The 2021 No. 1 pick made his first All-Star team in 2025."
+    },
+    {
+      "name": "Chet Holmgren",
+      "status": "active",
+      "born": "2002-05-01",
+      "team": "Oklahoma City Thunder",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "chet_holmgren",
+          "count": 939426
+        },
+        "x": {
+          "handle": "ChetHolmgren",
+          "count": 338600
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "Holmgren won the 2025 title with Oklahoma City and is currently sidelined with a knee injury."
+    },
+    {
+      "name": "Russell Westbrook",
+      "status": "retired",
+      "born": "1988-11-12",
+      "team": "Retired",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "russwest44",
+          "count": 21786833
+        },
+        "x": {
+          "handle": "russwest44",
+          "count": 6200000
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "The 2017 MVP and all-time triple-double leader retired this summer after 18 seasons."
+    },
+    {
+      "name": "Shaquille O'Neal",
+      "status": "retired",
+      "born": "1972-03-06",
+      "team": "Retired",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "shaq",
+          "count": 35113043
+        },
+        "x": {
+          "handle": "SHAQ",
+          "count": 14500000
+        },
+        "tiktok": {
+          "handle": "shaq",
+          "count": 14800000
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "Four-time champion and 2000 MVP."
+    },
+    {
+      "name": "Dwyane Wade",
+      "status": "retired",
+      "born": "1982-01-17",
+      "team": "Retired",
+      "team_checked": true,
+      "accounts": {
+        "instagram": {
+          "handle": "dwyanewade",
+          "count": 18844600
+        },
+        "x": {
+          "handle": "DwyaneWade",
+          "count": 8400000
+        },
+        "tiktok": {
+          "handle": null,
+          "count": "none"
+        }
+      },
+      "posts": "",
+      "posts_checked": true,
+      "fact": "Three-time champion with the Miami Heat."
+    }
+  ],
+  "teams": [
+    {
+      "name": "Los Angeles Lakers",
+      "instagram": {
+        "handle": "lakers",
+        "count": 24413808
+      }
+    },
+    {
+      "name": "Golden State Warriors",
+      "instagram": {
+        "handle": "warriors",
+        "count": 31504379
+      }
+    },
+    {
+      "name": "Chicago Bulls",
+      "instagram": {
+        "handle": "chicagobulls",
+        "count": 9961325
+      }
+    },
+    {
+      "name": "Boston Celtics",
+      "instagram": {
+        "handle": "celtics",
+        "count": 8273139
+      }
+    },
+    {
+      "name": "Miami Heat",
+      "instagram": {
+        "handle": "miamiheat",
+        "count": 6561518
+      }
+    }
+  ],
+  "athletes": [
+    {
+      "name": "Cristiano Ronaldo",
+      "sport": "soccer",
+      "instagram": {
+        "handle": "cristiano",
+        "count": 679846737
+      }
+    },
+    {
+      "name": "Lionel Messi",
+      "sport": "soccer",
+      "instagram": {
+        "handle": "leomessi",
+        "count": 517651328
+      }
+    },
+    {
+      "name": "Virat Kohli",
+      "sport": "cricket",
+      "instagram": {
+        "handle": "virat.kohli",
+        "count": 270929071
+      }
+    }
+  ],
+  "growth": {
+    "_readme": "Optional. 12-month Instagram gain per player from a named tracker (e.g. Social Blade), with its URL. Leave players empty and the page says this is the first edition.",
+    "source_name": null,
+    "source_url": null,
+    "players": []
+  }
+}
