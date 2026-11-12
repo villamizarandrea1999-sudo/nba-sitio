@@ -77,8 +77,8 @@ const gameRows = [
 ];
 const resultRows = [...meetings].reverse().map(g => [g.date, g.note, `<strong>${g.score}</strong>`]);
 const formRows = [
-  ['<strong>San Antonio Spurs</strong>', '9-2', 'Won 9', 'Lost first two, then beat DAL, SAC, UTA, MIN, UTA, DAL, SAC, POR, PHX'],
-  ['<strong>New York Knicks</strong>', '6-4', 'Won 4', 'Started 0-3; last four wins over BKN, CHI, CLE, MIL'],
+  ['<strong>San Antonio Spurs</strong>', '10-2', 'Won 10', 'Lost first two, then beat DAL, SAC, UTA, MIN, UTA, DAL, SAC, POR, PHX, CHI'],
+  ['<strong>New York Knicks</strong>', '6-5', 'Lost 1', 'Started 0-3, won four straight, then lost 115-107 to Cleveland'],
 ];
 const playerRows = [
   ['<strong>Victor Wembanyama</strong>', 'SAS', '30.1', '11.9', '4.4 blocks', '26.0 pts, 11.2 reb, 3.6 blk'],
@@ -100,12 +100,14 @@ ${table(['', 'Spurs at Knicks', 'Knicks at Spurs'], gameRows)}
 <p class="article-caption">Times and broadcasters from the NBA's official 2026-27 schedule, checked ${PUB_H}. National TV assignments can change, so we'll recheck them the week of the game.</p>
 <p>Heads-up if you searched this game on Google: some AI summaries list the Christmas game at 9:00 a.m. ET and the March game at 4:30 p.m. ET. Neither matches the NBA's schedule. It's noon ET on Christmas and 7:30 p.m. ET in March.</p>
 
-${H2('Spurs vs Knicks Latest: Both Teams Are Rolling')}
-<p>Both teams stumbled out of the gate and have since caught fire. Here's where they stand heading into their games on November 11.</p>
+${H2('Spurs vs Knicks Latest: Where Both Teams Stand')}
+<p>Both teams stumbled out of the gate. Since then, San Antonio hasn't lost and New York has mostly recovered. Here's where they stand after the games of November 11.</p>
 ${table(['Team', 'Record', 'Streak', 'How they got here'], formRows)}
-<p class="article-caption">Records and results from Basketball-Reference, through games of November 10, 2026.</p>
+<p class="article-caption">Records and results from Basketball-Reference and ESPN, through games of November 11, 2026.</p>
 <p><strong>San Antonio</strong> hasn't lost since October 23. Wembanyama has been ridiculous during the streak: <strong>52 points, 24 rebounds and 8 blocks</strong> in a one-point win over Dallas on November 4, then <strong>40 points, 11 rebounds and 8 blocks</strong> in just 25 minutes at Phoenix on November 9.</p>
-<p><strong>New York</strong> started 0-3, which is a strange look for a defending champion, but it's been fine since. The Knicks have won five of their last six, including a 117-85 blowout of Milwaukee on November 10 in which Brunson scored 23 and Towns put up 21 points and 16 rebounds.</p>
+<p>The streak hit 10 on November 11 with a 124-119 win in Chicago.</p>
+<p><strong>New York</strong> started 0-3, which is a strange look for a defending champion. Then the Knicks won four straight, capped by a 117-85 blowout of Milwaukee on November 10 in which Brunson scored 23 and Towns put up 21 points and 16 rebounds. Cleveland ended that run the next night, 115-107 at the Garden.</p>
+<p><strong>Injury report:</strong> As of November 11, ESPN lists three Spurs as out: Devin Vassell (groin), Tobias Harris (calf) and Jayden Quaintance (knee). All three have estimated return dates well before Christmas. We'll post the official NBA injury report here the day before the game.</p>
 
 ${H2('Spurs vs Knicks Results: The Last 8 Meetings')}
 <p>These two teams have seen a lot of each other over the past year. The Knicks have won ${nykWins} of the last 8, but don't let that fool you. Five of those games were decided by four points or fewer, and two Finals games came down to a single point.</p>
@@ -114,7 +116,7 @@ ${table(['Date', 'Game', 'Final score'], resultRows)}
 <p>The rivalry really started in Las Vegas on December 16, 2025, when the Knicks beat the Spurs 124-113 to win the NBA Cup and Brunson was named tournament MVP. San Antonio got one back on New Year's Eve, 134-132. Then the Knicks won by 25 at the Garden in March, a preview nobody took seriously until June.</p>
 
 ${H2('How the Knicks Beat the Spurs in the 2026 NBA Finals')}
-<p>The Spurs had home-court advantage as the No. 2 seed, and the Knicks took it away right away. New York won the first two games in San Antonio, 105-95 and 105-104. The Spurs answered at the Garden in Game 3, 115-111.</p>
+<p>The Spurs had home-court advantage as the No. 2 seed, and the Knicks took it away right away. In Game 1, New York erased a 14-point second-half deficit, closed on an 11-0 run and won 105-95. According to the AP, that made the Knicks the first team ever to beat San Antonio in Game 1 of a Finals (the Spurs had been 6-0). Two nights later they won again, 105-104, stretching their playoff winning streak to 13. The Spurs finally ended that streak at the Garden in Game 3, 115-111.</p>
 <p>Game 4 was the one that broke them. The Spurs led by as many as 29 points, and the Knicks still came back to win 107-106 for a 3-1 series lead, which ESPN called a record rally. Back in San Antonio for Game 5, Jalen Brunson dropped <strong>45 points</strong> in a 94-90 win that clinched New York's first championship since 1973.</p>
 <p>Brunson was the obvious Finals MVP at 32.6 points per game. OG Anunoby was the quiet difference-maker: 21.2 points a game on 50% from three. Wembanyama averaged 26.0 points, 11.2 rebounds and 3.6 blocks, but the Knicks made him work for everything. For the full game-by-game breakdown, see our ${int('/blog/nba-finals-schedule-2026/', '2026 NBA Finals results')} and the ${int('/blog/nba-playoffs-2026-recap/', '2026 playoffs recap')}.</p>
 
@@ -126,7 +128,7 @@ ${table(['Player', 'Team', 'PPG', 'RPG', 'Also', '2026 Finals'], playerRows)}
 
 ${H2('Spurs vs Knicks Prediction')}
 <p>This is an early lean, not a pick against the spread. We'll update it once injury reports and lines are out the week of the game.</p>
-<p><strong>Early lean: Spurs.</strong> The Knicks have owned this matchup, and Christmas at the Garden is about as tough a road game as there is. But this San Antonio team is playing better than the one that lost in June. The Spurs carry a nine-game win streak and a Wembanyama who's playing at an MVP level. New York's best path is the Finals formula: slow the game down, keep Wembanyama off the glass, and let Brunson take over late in close games. If it's within five points with three minutes left, flip this lean.</p>
+<p><strong>Early lean: Spurs.</strong> The Knicks have owned this matchup, and Christmas at the Garden is about as tough a road game as there is. But this San Antonio team is playing better than the one that lost in June. The Spurs carry a 10-game win streak and a Wembanyama who's playing at an MVP level, and ESPN's matchup predictor agrees, giving San Antonio a 53.9% chance to win as of November 11. New York's best path is the Finals formula: slow the game down, keep Wembanyama off the glass, and let Brunson take over late in close games. If it's within five points with three minutes left, flip this lean.</p>
 
 ${H2('Spurs vs Knicks Odds')}
 <p>We'll add the spread, moneyline and total here once sportsbooks post lines for the Christmas Day game. Lines from other games aren't a useful guide for this one, so we won't guess. If you bet, set a limit and stick to it. Help is available at 1-800-GAMBLER.</p>
@@ -138,6 +140,7 @@ ${H2('How to Watch Spurs vs Knicks')}
 <li><strong>Radio:</strong> 880 ESPN New York for the Knicks; WOAI and KXTN in San Antonio for the Spurs.</li>
 <li><strong>Outside the U.S.:</strong> NBA League Pass, subject to local broadcast deals.</li>
 </ul>
+<p><strong>Tickets:</strong> As of November 11, resale tickets for the Christmas game at Madison Square Garden started at about $560 on Vivid Seats and $582 on SeatGeek. The March 7 game in San Antonio was much cheaper, starting at $179 on SeatGeek. Prices change daily.</p>
 <p>Planning your holiday viewing? Our ${int('/blog/nba-2026-27-schedule/', '2026-27 NBA schedule guide')} has the full Christmas Day slate, and the ${int('/nba-games/', 'NBA games grid')} shows every game on any night.</p>
 
 ${H2('Frequently Asked Questions')}
@@ -151,6 +154,9 @@ ${H2('Sources')}
 <li>${ext('https://www.basketball-reference.com/playoffs/2026-nba-finals-knicks-vs-spurs.html', 'Basketball-Reference — 2026 NBA Finals, Knicks vs. Spurs')}</li>
 <li>${ext('https://www.basketball-reference.com/teams/SAS/2027_games.html', 'Basketball-Reference — Spurs 2026-27 schedule and results')} and ${ext('https://www.basketball-reference.com/teams/NYK/2027_games.html', 'Knicks 2026-27 schedule and results')}</li>
 <li>${ext('https://www.basketball-reference.com/players/w/wembavi01/gamelog/2027', 'Basketball-Reference — Victor Wembanyama 2026-27 game log')}</li>
+<li>${ext('https://www.espn.com/nba/game/_/gameId/401909097/spurs-knicks', 'ESPN — Spurs vs. Knicks (Dec 25, 2026) game page')} (injuries, matchup predictor, ticket prices)</li>
+<li>${ext('https://www.nba.com/game/nyk-vs-sas-0042500401', 'NBA.com / AP — Knicks steal Game 1 from Spurs, 105-95')}</li>
+<li>${ext('https://seatgeek.com/knicks-spurs-tickets', 'SeatGeek — Knicks vs. Spurs tickets')}</li>
 <li>${ext('https://www.nbcnews.com/sports/nba/knicks-win-nba-cup-rallying-beat-spurs-124-113-rcna249637', 'NBC News — Knicks win NBA Cup, beat Spurs 124-113')}</li>
 </ul>`;
 
