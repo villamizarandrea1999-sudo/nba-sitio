@@ -295,6 +295,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://nba-grid.com/blog/spurs-vs-knicks/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://nba-grid.com/blog/luka-doncic-weight/</loc>
     <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
