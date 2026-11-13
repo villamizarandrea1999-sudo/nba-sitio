@@ -80,8 +80,11 @@ const before = page;
 page = page.replace(/(<!-- STANDINGS_START -->)[\s\S]*?(<!-- STANDINGS_END -->)/, `$1\n${html}\n$2`);
 page = page.replace(/(<span class="st-asof">)[^<]*(<\/span>)/g, `$1${asOfH}$2`);
 if (page !== before) {
-  page = page.replace(/"dateModified": "[^"]*"/, `"dateModified": "${asOf}"`)
-    .replace(/(<span class="byline-updated">Updated <time datetime=")[^"]*(">)[^<]*(<\/time>)/, `$1${asOf}$2${asOfH}$3`);
+  // "Updated" = the day this ran (never earlier than the publish date), not the last game's date
+  const today = new Date().toISOString().slice(0, 10);
+  const todayH = new Date(today + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  page = page.replace(/"dateModified": "[^"]*"/, `"dateModified": "${today}"`)
+    .replace(/(<span class="byline-updated">Updated <time datetime=")[^"]*(">)[^<]*(<\/time>)/, `$1${today}$2${todayH}$3`);
 }
 fs.writeFileSync(TARGET, page);
 console.log(`Standings through ${asOf}: ${counted.length} games counted${cupFinal.length ? ' (Cup final excluded)' : ''}.`);
