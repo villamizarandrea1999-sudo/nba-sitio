@@ -295,6 +295,36 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://nba-grid.com/blog/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/blog/injuries/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/blog/trades/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/blog/contracts/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/blog/matchups/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://nba-grid.com/nba-standings/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>daily</changefreq>

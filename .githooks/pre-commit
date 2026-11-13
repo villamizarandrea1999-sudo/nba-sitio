@@ -1,6 +1,9 @@
 #!/bin/sh
-# 1) Refresh the homepage's ticker, hero cards and Latest News from the newest articles.
+# 1) Rebuild /blog/ and the category pages from the articles.
+node scripts/build-categories.js || exit 1
+git add blog/index.html blog/injuries/index.html blog/trades/index.html blog/contracts/index.html blog/matchups/index.html
+# 2) Refresh the homepage's ticker, hero cards and Latest News from the newest articles.
 node scripts/update-homepage.js || exit 1
 git add index.html
-# 2) Block any commit that would leave an article orphaned.
+# 3) Block any commit that would leave an article orphaned.
 node scripts/check-links.js || exit 1
