@@ -106,10 +106,22 @@ body {
     border-radius: 12px;
     padding: 8px;
     min-width: 240px;
+    max-height: min(70vh, 560px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.18s ease, transform 0.18s ease;
     z-index: 60;
+}
+/* invisible bridge over the 16px gap so the menu stays open while the mouse moves down to it */
+.nav-dropdown:hover::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    right: -20px;
+    top: 100%;
+    height: 20px;
 }
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
