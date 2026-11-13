@@ -1,0 +1,3 @@
+#!/bin/sh
+# Blocks any commit that would leave an article orphaned (no homepage link, no link from another article, or not in the sitemap).
+node scripts/check-links.js || exit 1
