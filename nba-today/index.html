@@ -24,11 +24,11 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"/>
 <meta name="theme-color" content="#1c1b1b"/>
 <link rel="alternate" type="application/rss+xml" title="NBA GRID" href="https://nba-grid.com/feed.xml"/>
-<title>NBA Today: Birthdays, Milestones &amp; Daily Updates | NBA GRID</title>
-<meta name="description" content="NBA Today is your daily hub for what's happening around the league: player birthdays, historic milestones and the latest transactions, updated daily."/>
+<title>NBA Today: Tonight's Games, Last Night's Scores &amp; Standings</title>
+<meta name="description" content="NBA Today: tonight's NBA games with tip-off times, last night's final scores, the conference leaders and today's player birthdays. Updated every morning."/>
 <link rel="canonical" href="https://nba-grid.com/nba-today/"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="NBA Today: Birthdays, Milestones & Daily NBA Updates"/>
+<meta property="og:title" content="NBA Today: Tonight's Games, Last Night's Scores &amp; Standings"/>
 <meta property="og:description" content="Your daily hub for what's happening around the NBA right now — player birthdays, historic milestones, and the latest transactions."/>
 <meta property="og:url" content="https://nba-grid.com/nba-today/"/>
 <meta property="og:image" content="https://nba-grid.com/assets/images/og-nba-today.jpg"/>
@@ -45,6 +45,21 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"/></noscript>
 <link rel="stylesheet" href="../style.css"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "NBA Today",
+  "description": "NBA Today: tonight's NBA games with tip-off times, last night's final scores, the conference leaders and today's player birthdays. Updated every morning.",
+  "url": "https://nba-grid.com/nba-today/",
+  "dateModified": "2026-11-13",
+  "publisher": {
+    "@type": "Organization",
+    "name": "NBA GRID",
+    "url": "https://nba-grid.com"
+  }
+}
+</script>
 </head>
 <body class="bg-background text-on-surface font-body-md overflow-x-hidden pb-24 md:pb-0">
 <!-- Header Navigation -->
@@ -180,7 +195,11 @@
 <section class="mb-xl">
 <span class="font-label-caps text-primary text-[11px] tracking-widest">UPDATED DAILY</span>
 <h1 class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase italic tracking-tighter mt-1 mb-sm">NBA TODAY</h1>
-<p class="text-on-surface-variant text-body-lg max-w-2xl">A living hub of sections that refresh every day — birthdays, milestones, transactions, and more. Pick a section below.</p>
+<p class="text-on-surface-variant text-body-lg max-w-2xl">Everything happening in the NBA today, in one place: tonight's games and tip-off times, last night's final scores, the teams on top of each conference and today's player birthdays. This page updates automatically every morning. Today is <span class="nt-date">—</span>.</p>
+</section>
+<section class="mb-xl prose-article text-body-lg text-on-surface">
+<!-- NBA_TODAY_START -->
+<!-- NBA_TODAY_END -->
 </section>
 <!-- Sections Grid -->
 <section class="mb-xl">
@@ -194,24 +213,42 @@
 <p class="text-on-surface-variant text-body-md">See which NBA stars are celebrating a birthday today, and who&#39;s next.</p>
 <span class="today-card-cta">VIEW SECTION <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span></span>
 </a>
-<div class="today-card today-card-soon">
+<a href="/nba-standings/" class="today-card group">
 <div class="today-card-icon">
-<span class="material-symbols-outlined">military_tech</span>
+<span class="material-symbols-outlined">leaderboard</span>
 </div>
-<span class="font-label-caps text-xs text-primary mb-xs block">DAILY · MILESTONES</span>
-<h3 class="font-headline-md text-[22px] mb-sm uppercase leading-tight">On This Day</h3>
-<p class="text-on-surface-variant text-body-md">Historic NBA records, trades, and moments that happened on today's date.</p>
-<span class="today-card-cta opacity-50">COMING SOON</span>
+<span class="font-label-caps text-xs text-primary mb-xs block">DAILY · STANDINGS</span>
+<h3 class="font-headline-md text-[22px] mb-sm uppercase leading-tight group-hover:text-primary transition-colors">NBA Standings 2026-27</h3>
+<p class="text-on-surface-variant text-body-md">Every team's record, games behind, home and road splits and streaks, updated each morning.</p>
+<span class="today-card-cta">VIEW SECTION <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span></span>
+</a>
+<a href="/blog/injuries/" class="today-card group">
+<div class="today-card-icon">
+<span class="material-symbols-outlined">healing</span>
 </div>
-<div class="today-card today-card-soon">
+<span class="font-label-caps text-xs text-primary mb-xs block">NEWS · INJURIES</span>
+<h3 class="font-headline-md text-[22px] mb-sm uppercase leading-tight group-hover:text-primary transition-colors">NBA Injury Updates</h3>
+<p class="text-on-surface-variant text-body-md">Surgeries, timelines and what each absence means, from our injury coverage.</p>
+<span class="today-card-cta">VIEW SECTION <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span></span>
+</a>
+<a href="/blog/nba-power-rankings-2026-27/" class="today-card group">
+<div class="today-card-icon">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<span class="font-label-caps text-xs text-primary mb-xs block">WEEKLY · POWER RANKINGS</span>
+<h3 class="font-headline-md text-[22px] mb-sm uppercase leading-tight group-hover:text-primary transition-colors">NBA Power Rankings</h3>
+<p class="text-on-surface-variant text-body-md">All 30 teams ranked by record and adjusted net rating, updated every week.</p>
+<span class="today-card-cta">VIEW SECTION <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span></span>
+</a>
+<a href="/blog/trades/" class="today-card group">
 <div class="today-card-icon">
 <span class="material-symbols-outlined">swap_horiz</span>
 </div>
-<span class="font-label-caps text-xs text-primary mb-xs block">DAILY · TRANSACTIONS</span>
-<h3 class="font-headline-md text-[22px] mb-sm uppercase leading-tight">Latest Transactions</h3>
-<p class="text-on-surface-variant text-body-md">Trades, signings, and roster moves from around the league.</p>
-<span class="today-card-cta opacity-50">COMING SOON</span>
-</div>
+<span class="font-label-caps text-xs text-primary mb-xs block">NEWS · TRADES</span>
+<h3 class="font-headline-md text-[22px] mb-sm uppercase leading-tight group-hover:text-primary transition-colors">NBA Trades</h3>
+<p class="text-on-surface-variant text-body-md">Every trade we have covered, from blockbusters to deadline deals.</p>
+<span class="today-card-cta">VIEW SECTION <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span></span>
+</a>
 </div>
 </section>
 <!-- Related Guides -->

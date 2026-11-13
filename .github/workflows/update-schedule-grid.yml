@@ -29,14 +29,17 @@ jobs:
       - name: Generate standings
         run: node scripts/generate-standings.js
 
+      - name: Generate NBA Today
+        run: node scripts/generate-nba-today.js
+
       - name: Commit and push if changed
         run: |
           git config user.name "nba-grid-bot"
           git config user.email "actions@users.noreply.github.com"
-          if git diff --quiet -- blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html; then
+          if git diff --quiet -- blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html nba-today/index.html; then
             echo "No schedule or standings changes today."
           else
-            git add blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html
-            git commit -m "chore: nightly NBA schedule grid and standings update"
+            git add blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html nba-today/index.html
+            git commit -m "chore: nightly NBA schedule grid, standings and NBA Today update"
             git push
           fi
