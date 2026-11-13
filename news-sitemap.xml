@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>https://nba-grid.com/blog/cavaliers-vs-knicks/</loc>
+    <news:news>
+      <news:publication><news:name>NBA GRID</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-11-13</news:publication_date>
+      <news:title>Cavaliers vs Knicks: Next Game, Results, Player Stats &amp; How to Watch</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/nba-standings/</loc>
+    <news:news>
+      <news:publication><news:name>NBA GRID</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-11-13</news:publication_date>
+      <news:title>NBA Standings 2026-27</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://nba-grid.com/blog/spurs-vs-knicks/</loc>
+    <news:news>
+      <news:publication><news:name>NBA GRID</news:name><news:language>en</news:language></news:publication>
+      <news:publication_date>2026-11-11</news:publication_date>
+      <news:title>Spurs vs Knicks: Christmas Day Finals Rematch Preview, How to Watch &amp; Results</news:title>
+    </news:news>
+  </url>
+</urlset>

@@ -5,5 +5,8 @@ git add blog/index.html blog/injuries/index.html blog/trades/index.html blog/con
 # 2) Refresh the homepage's ticker, hero cards and Latest News from the newest articles.
 node scripts/update-homepage.js || exit 1
 git add index.html
-# 3) Block any commit that would leave an article orphaned.
+# 3) RSS feed and Google News sitemap.
+node scripts/build-feeds.js || exit 1
+git add feed.xml news-sitemap.xml
+# 4) Block any commit that would leave an article orphaned.
 node scripts/check-links.js || exit 1

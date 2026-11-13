@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://nba-grid.com/sitemap.xml
+
+Sitemap: https://nba-grid.com/news-sitemap.xml

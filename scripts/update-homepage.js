@@ -48,7 +48,7 @@ ${a.img ? `<img src="${a.img}" alt="${esc(a.alt)}" style="position:absolute;inse
 `).join('');
 const recent = arts.slice(2, 5).map((a, i) => `<a href="${a.href}" style="display:flex;gap:14px;padding:${i < 2 ? '18px 0' : '18px 0 4px'}${i < 2 ? ';border-bottom:1px solid rgba(255,255,255,.1)' : ''}">
 <span style="width:28px;height:28px;flex:none;border-radius:50%;background:#f3f4f6;color:#0d1418;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">${i + 1}</span>
-${a.img ? `<img src="${a.img}" alt="" loading="lazy" style="width:80px;height:58px;flex:none;object-fit:cover;border-radius:4px"/>
+${a.img ? `<img src="${a.img}" alt="${esc(a.alt)}" loading="lazy" style="width:80px;height:58px;flex:none;object-fit:cover;border-radius:4px"/>
 ` : ''}<div>
 <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:#ef7f1a;margin-bottom:6px">${esc(a.tag)}</div>
 <div style="color:#fff;font-size:15px;font-weight:700;line-height:1.3">${esc(a.title)}</div>
