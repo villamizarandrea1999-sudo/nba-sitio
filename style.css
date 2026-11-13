@@ -918,3 +918,19 @@ body {
 .g3-rules { font-size: 13px; color: rgba(255,255,255,.65); margin-top: 12px; line-height: 1.5; }
 @media (max-width: 520px) { .g3-shell { padding: 14px; border-radius: 18px; } .g3-grid { gap: 4px; } .g3-head { min-height: 52px; padding: 4px 2px; } .g3-answers-list { columns: 1; } }
 #g3-root .hidden { display: none !important; }
+
+/* NBA standings tables (/nba-standings/, filled by scripts/generate-standings.js) */
+.st-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.st-table th, .st-table td { padding: 8px 10px; text-align: right; white-space: nowrap; }
+.st-table thead th { font-family: "JetBrains Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; border-bottom: 2px solid #1a1c1c; }
+.st-table tbody th { text-align: left; font-weight: 700; }
+.st-table thead th:nth-child(2) { text-align: left; }
+.st-table td.st-rank { text-align: center; font-weight: 800; width: 36px; }
+.st-table tbody tr { border-bottom: 1px solid rgba(26,28,28,.08); }
+.st-table tr.st-playoff td.st-rank { background: #f28c28; color: #fff; }
+.st-table tr.st-playin td.st-rank { background: #ffe0c2; color: #1a1c1c; }
+.st-table tr.st-out { color: #6b7280; }
+.st-table tr.st-cut { border-bottom: 2px dashed #964900; }
+.st-legend { font-size: 14px; display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.st-key { display: inline-block; width: 14px; height: 14px; border-radius: 3px; vertical-align: middle; }
+.st-key-playoff { background: #f28c28; } .st-key-playin { background: #ffe0c2; border: 1px solid #f28c28; } .st-key-out { background: #e5e7eb; }

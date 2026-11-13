@@ -26,14 +26,17 @@ jobs:
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
         run: node scripts/generate-schedule-grid.js
 
+      - name: Generate standings
+        run: node scripts/generate-standings.js
+
       - name: Commit and push if changed
         run: |
           git config user.name "nba-grid-bot"
           git config user.email "actions@users.noreply.github.com"
-          if git diff --quiet -- blog/nba-fantasy-schedule-grid/index.html; then
-            echo "No schedule changes today."
+          if git diff --quiet -- blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html; then
+            echo "No schedule or standings changes today."
           else
-            git add blog/nba-fantasy-schedule-grid/index.html
-            git commit -m "chore: nightly NBA schedule grid update"
+            git add blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html
+            git commit -m "chore: nightly NBA schedule grid and standings update"
             git push
           fi

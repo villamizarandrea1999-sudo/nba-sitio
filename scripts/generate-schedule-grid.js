@@ -168,6 +168,8 @@ async function main() {
   await sleep(RATE_LIMIT_DELAY_MS);
   const games = await fetchAllSeasonGames();
   const weeks = buildWeeks(SEASON_START, SEASON_END);
+  // Shared with scripts/generate-standings.js (same workflow run) so standings cost no extra API calls.
+  fs.writeFileSync(path.join(__dirname, '.games-cache.json'), JSON.stringify({ teams, games }));
 
   // Keyed by abbreviation (not team id) so duplicate team ids for the same
   // franchise still get aggregated into one row.
