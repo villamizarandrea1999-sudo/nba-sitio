@@ -106,7 +106,7 @@ ${table(['Team', 'Record', 'Streak', 'How they got here'], formRows)}
 <p class="article-caption">Records and results from Basketball-Reference and ESPN, through games of November 11, 2026.</p>
 <p><strong>San Antonio</strong> hasn't lost since October 23. Wembanyama has been ridiculous during the streak: <strong>52 points, 24 rebounds and 8 blocks</strong> in a one-point win over Dallas on November 4, then <strong>40 points, 11 rebounds and 8 blocks</strong> in just 25 minutes at Phoenix on November 9.</p>
 <p>The streak hit 10 on November 11 with a 124-119 win in Chicago.</p>
-<p><strong>New York</strong> started 0-3, which is a strange look for a defending champion. Then the Knicks won four straight, capped by a 117-85 blowout of Milwaukee on November 10 in which Brunson scored 23 and Towns put up 21 points and 16 rebounds. Cleveland ended that run the next night, 115-107 at the Garden.</p>
+<p><strong>New York</strong> started 0-3, which is a strange look for a defending champion. Then the Knicks won four straight, capped by a 117-85 blowout of Milwaukee on November 10 in which Brunson scored 23 and Towns put up 21 points and 16 rebounds. Cleveland ended that run the next night, ${int('/blog/cavaliers-vs-knicks/', '115-107 at the Garden')}.</p>
 <p><strong>Injury report:</strong> As of November 11, ESPN lists three Spurs as out: Devin Vassell (groin), Tobias Harris (calf) and Jayden Quaintance (knee). All three have estimated return dates well before Christmas. We'll post the official NBA injury report here the day before the game.</p>
 
 ${H2('Spurs vs Knicks Results: The Last 8 Meetings')}
