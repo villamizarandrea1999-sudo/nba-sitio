@@ -1,3 +1,6 @@
 #!/bin/sh
-# Blocks any commit that would leave an article orphaned (no homepage link, no link from another article, or not in the sitemap).
+# 1) Refresh the homepage's ticker, hero cards and Latest News from the newest articles.
+node scripts/update-homepage.js || exit 1
+git add index.html
+# 2) Block any commit that would leave an article orphaned.
 node scripts/check-links.js || exit 1
