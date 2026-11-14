@@ -15,7 +15,7 @@ const CATEGORY_OF = {
   '/blog/anthony-davis-wizards-extension/': 'contracts', '/blog/mario-hezonja-cavaliers/': 'contracts',
   '/blog/nba-six-team-trade-russell-middleton/': 'trades', '/blog/nba-trade-deadline-2026/': 'trades',
 };
-const SKIP = /^\/(about|privacy|terms|author|nba-games|nba-today|nba-grid|grid|editorial-policy)\b/;
+const SKIP = /^\/(about|privacy|terms|author|nba-games|nba-today)\b/;
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const catUrls = new Set(['/blog/', ...Object.keys(CATS).map(k => `/blog/${k}/`)]);
 const urls = [...sitemap.matchAll(/<loc>https:\/\/nba-grid\.com(\/[^<]*)<\/loc>/g)].map(m => m[1]).filter(u => u !== '/' && !SKIP.test(u) && !catUrls.has(u));

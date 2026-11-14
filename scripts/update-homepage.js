@@ -7,7 +7,7 @@
 // Runs automatically before every commit (.githooks/pre-commit). Manual: node scripts/update-homepage.js [--list]
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
-const SKIP = /^\/(about|privacy|terms|author|nba-games|nba-today|nba-grid|grid|editorial-policy)\b/;
+const SKIP = /^\/(about|privacy|terms|author|nba-games|nba-today)\b/;
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>https:\/\/nba-grid\.com(\/[^<]*)<\/loc>/g)].map(m => m[1]).filter(u => u !== '/' && !SKIP.test(u));
 const esc = s => s.replace(/&(?!amp;|lt;|gt;|quot;|#\d+;)/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');

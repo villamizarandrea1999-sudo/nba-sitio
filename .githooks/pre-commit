@@ -1,7 +1,4 @@
 #!/bin/sh
-# 0) NBA GRID game page, daily answers pages and /grid/ redirect.
-node scripts/nba-3x3/build-pages.js || exit 1
-git add nba-grid grid sitemap.xml
 # 1) Rebuild /blog/ and the category pages from the articles.
 node scripts/build-categories.js || exit 1
 git add blog/index.html blog/injuries/index.html blog/trades/index.html blog/contracts/index.html blog/matchups/index.html
