@@ -43,7 +43,8 @@ for (const p of pages) {
 for (const [u, from] of inbound) {
   const content = [...from].filter(f => f !== '/' && !f.startsWith('/author/'));
   const missing = [];
-  if (!from.has('/')) missing.push('homepage');
+  // daily answer pages live in the answers index, not on the homepage
+  if (!from.has('/') && !u.startsWith('/nba-grid/answers/')) missing.push('homepage');
   if (!content.length) missing.push('any other article');
   if (missing.length) problems.push(`${u}  ← not linked from ${missing.join(' or ')}`);
 }

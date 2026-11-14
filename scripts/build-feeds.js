@@ -3,7 +3,7 @@
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://nba-grid.com';
-const SKIP = /^\/(about|privacy|terms|author|nba-games|nba-today)\b/;
+const SKIP = /^\/(about|privacy|terms|author|nba-games|nba-today|nba-grid|grid|editorial-policy)\b/;
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>https:\/\/nba-grid\.com(\/[^<]*)<\/loc>/g)].map(m => m[1]).filter(u => u !== '/' && !SKIP.test(u));
 const x = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
