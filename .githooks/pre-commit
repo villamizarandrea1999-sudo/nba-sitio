@@ -8,5 +8,8 @@ git add index.html
 # 3) RSS feed and Google News sitemap.
 node scripts/build-feeds.js || exit 1
 git add feed.xml news-sitemap.xml
-# 4) Block any commit that would leave an article orphaned.
+# 4) Sitemap lastmod = each page's real dateModified.
+node scripts/sync-sitemap-lastmod.js || exit 1
+git add sitemap.xml
+# 5) Block any commit that would leave an article orphaned.
 node scripts/check-links.js || exit 1

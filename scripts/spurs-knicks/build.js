@@ -195,6 +195,8 @@ const main = `<main class="max-w-container-max mx-auto px-grid-margin py-md">
 <span>•</span>
 <span class="byline-published">Published <time datetime="${PUB}">${PUB_H}</time></span>
 <span>•</span>
+<span class="byline-updated">Updated <time datetime="${PUB}">${PUB_H}</time></span>
+<span>•</span>
 <span>${Math.max(1, Math.round(words / 230))} min read</span>
 </div>
 </header>
