@@ -421,3 +421,13 @@ if (gridEl) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 })();
+
+// Ticker: constant reading speed (~45 px/s) no matter how long the headlines are.
+// The keyframes move -50% (one copy of the headline list), so distance = half the track width.
+(function () {
+    const track = document.querySelector('.animate-ticker');
+    if (!track) return;
+    const setSpeed = () => { const distance = track.scrollWidth / 2; if (distance > 0) track.style.animationDuration = Math.round(distance / 45) + 's'; };
+    setSpeed();
+    window.addEventListener('load', setSpeed);
+})();
