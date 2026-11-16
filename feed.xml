@@ -6,7 +6,15 @@
     <description>NBA news, injuries, trades, matchup hubs, guides and daily NBA puzzles.</description>
     <language>en-us</language>
     <atom:link href="https://nba-grid.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Fri, 13 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Stephen Curry Update Today: Warriors Reveal Oblique Tear, Re-Evaluation Timeline</title>
+      <link>https://nba-grid.com/blog/stephen-curry-update-today-warriors-injury/</link>
+      <guid isPermaLink="true">https://nba-grid.com/blog/stephen-curry-update-today-warriors-injury/</guid>
+      <pubDate>Mon, 16 Nov 2026 17:00:00 GMT</pubDate>
+      <description>Stephen Curry has an oblique abdominal tear and will be re-evaluated in two weeks. Here is the latest Warriors injury update and what it means for Golden State.</description>
+      <enclosure url="https://nba-grid.com/assets/images/stephen-curry-injury-timeline.jpg" type="image/jpeg" length="0"/>
+    </item>
     <item>
       <title>Cavaliers vs Knicks: Next Game, Results, Player Stats &amp; How to Watch</title>
       <link>https://nba-grid.com/blog/cavaliers-vs-knicks/</link>
@@ -158,14 +166,6 @@
       <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
       <description>The final 2025-26 NBA standings: how the Eastern and Western Conferences finished, who clinched the top seeds, and who fell into the play-in.</description>
       <enclosure url="https://nba-grid.com/assets/images/nba-arena-empty.jpg" type="image/jpeg" length="0"/>
-    </item>
-    <item>
-      <title>2026 NBA Trade Deadline: Every Deal Before the Buzzer</title>
-      <link>https://nba-grid.com/blog/nba-trade-deadline-2026/</link>
-      <guid isPermaLink="true">https://nba-grid.com/blog/nba-trade-deadline-2026/</guid>
-      <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
-      <description>A recap of every trade completed before the 2026 NBA trade deadline, plus when the 2027 deadline lands.</description>
-      <enclosure url="https://nba-grid.com/assets/images/nba-trade-2026.jpg" type="image/jpeg" length="0"/>
     </item>
   </channel>
 </rss>
