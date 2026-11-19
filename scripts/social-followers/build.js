@@ -214,7 +214,7 @@ const schema = [
 ].join('\n');
 
 const html = `<!DOCTYPE html>
-<html class="light" lang="en"><head>
+<html class="light" lang="en-US"><head>
 ${analytics}
 
 <meta charset="utf-8"/>
@@ -227,6 +227,7 @@ ${analytics}
 <meta name="description" content="${esc(desc)}"/>
 <link rel="canonical" href="${URL}"/>
 <meta property="og:type" content="article"/>
+<meta property="og:locale" content="en_US"/>
 <meta property="og:title" content="${esc(h1)}"/>
 <meta property="og:description" content="${esc(desc)}"/>
 <meta property="og:image" content="https://nba-grid.com${IMG}"/>
