@@ -6,7 +6,15 @@
     <description>NBA news, injuries, trades, matchup hubs, guides and daily NBA puzzles.</description>
     <language>en-us</language>
     <atom:link href="https://nba-grid.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 16 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Dylan Harper Injury Update: Spurs Guard Ruled Out After Slipping vs. Pistons</title>
+      <link>https://nba-grid.com/blog/dylan-harper-injury/</link>
+      <guid isPermaLink="true">https://nba-grid.com/blog/dylan-harper-injury/</guid>
+      <pubDate>Wed, 18 Nov 2026 17:00:00 GMT</pubDate>
+      <description>Dylan Harper slipped late in the Spurs' loss to Detroit and is out Thursday vs. the Clippers with left hip soreness. Latest status, what happened and the timeline.</description>
+      <enclosure url="https://nba-grid.com/assets/images/dylan-harper-injury-spurs-schedule.jpg" type="image/jpeg" length="0"/>
+    </item>
     <item>
       <title>Stephen Curry Update Today: Warriors Reveal Oblique Tear, Re-Evaluation Timeline</title>
       <link>https://nba-grid.com/blog/stephen-curry-update-today-warriors-injury/</link>
@@ -158,14 +166,6 @@
       <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
       <description>NBA power rankings, Week 4: the Spurs take No. 1 on a 10-game win streak, the Rockets and Lakers follow, and the champion Knicks slide to 14th.</description>
       <enclosure url="https://nba-grid.com/assets/images/nba-power-rankings-action.jpg" type="image/jpeg" length="0"/>
-    </item>
-    <item>
-      <title>NBA Standings 2025-26: How Every Team Finished the Season</title>
-      <link>https://nba-grid.com/blog/nba-standings-2025-26/</link>
-      <guid isPermaLink="true">https://nba-grid.com/blog/nba-standings-2025-26/</guid>
-      <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
-      <description>The final 2025-26 NBA standings: how the Eastern and Western Conferences finished, who clinched the top seeds, and who fell into the play-in.</description>
-      <enclosure url="https://nba-grid.com/assets/images/nba-arena-empty.jpg" type="image/jpeg" length="0"/>
     </item>
   </channel>
 </rss>
