@@ -40,6 +40,15 @@ for (const p of pages) {
   const redirect = /http-equiv="refresh"/i.test(fs.readFileSync(p, 'utf8').slice(0, 3000));
   if (u.startsWith('/blog/') && !redirect && !inbound.has(u)) problems.push(`${u}  ← missing from sitemap.xml`);
 }
+// every internal URL in links and JSON-LD (breadcrumbs, mainEntityOfPage...) must exist, or Google reports a 404
+const exists = u => { const f = path.join(ROOT, u.split('#')[0].split('?')[0]); return fs.existsSync(f) && fs.statSync(f).isFile() || fs.existsSync(path.join(f, 'index.html')); };
+for (const p of pages) {
+  const html = fs.readFileSync(p, 'utf8');
+  for (const m of html.matchAll(/(?:href="|"(?:item|url|@id|mainEntityOfPage)":\s*")(https:\/\/nba-grid\.com[^"]*|\/[^"/][^"]*)"/g)) {
+    const u = m[1].replace('https://nba-grid.com', '') || '/';
+    if (!exists(u)) problems.push(`${urlOf(p)}  → ${u}  ← points to a page that doesn't exist (404)`);
+  }
+}
 for (const [u, from] of inbound) {
   const content = [...from].filter(f => f !== '/' && !f.startsWith('/author/'));
   const missing = [];
@@ -48,7 +57,7 @@ for (const [u, from] of inbound) {
   if (missing.length) problems.push(`${u}  ← not linked from ${missing.join(' or ')}`);
 }
 if (problems.length) {
-  console.error('\nORPHAN PAGES (readers can\'t find these on the site):\n  ' + problems.join('\n  ') + '\n\nAdd a homepage card and a link from a related article, then commit again.\n');
+  console.error('\nLINK PROBLEMS (orphan pages or links to pages that don\'t exist):\n  ' + [...new Set(problems)].join('\n  ') + '\n\nFix the link, or add a homepage card and a link from a related article, then commit again.\n');
   process.exit(1);
 }
 console.log(`Link check passed: all ${urls.length} sitemap pages are linked from the homepage and another article.`);
