@@ -89,7 +89,7 @@ ${table(['When', 'Weight', 'Source'], tlRows)}
 ${H2("Luka's Heaviest Weight: More Than 260 Pounds")}
 <p>In December 2021, ESPN's Tim MacMahon reported that Doncic had come into training camp weighing more than 260 pounds, and that it was the second year in a row. His listed weight at the time was 230. That gap of 30-plus pounds is where most of the "Luka is out of shape" talk started.</p>
 <p>Luka didn't really dodge it. After a loss to Brooklyn that month, he admitted his conditioning wasn't where it needed to be. "I know I've got to do better," he said. He also blamed a long summer: he had played for Slovenia at the Tokyo Olympics right after the 2021 playoffs.</p>
-<p>The weight question followed him for the rest of his time in Dallas. When the Mavericks traded him to the Lakers in February 2025, reports said the team pointed to his conditioning and work habits as part of the reason. A calf injury had also limited him to 50 games that season.</p>
+<p>The weight question followed him for the rest of his time in Dallas. When the Mavericks traded him to the Lakers in February 2025, reports said the team pointed to his conditioning and work habits as part of the reason. A calf injury had also limited him to 50 games that season. His full injury record is in our <a href="/blog/luka-doncic-injury/" class="text-primary underline">Luka Doncic injury update</a>.</p>
 
 ${H2('How Luka Doncic Lost Weight')}
 <p>The turnaround came in the 2025 offseason, his first full summer as a Laker. In July 2025 he was on the cover of <em>Men's Health</em>, and the photos showed a much leaner player. Here's what the magazine and the follow-up reporting said he changed:</p>

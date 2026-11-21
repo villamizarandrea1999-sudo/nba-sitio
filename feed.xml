@@ -6,7 +6,15 @@
     <description>NBA news, injuries, trades, matchup hubs, guides and daily NBA puzzles.</description>
     <language>en-us</language>
     <atom:link href="https://nba-grid.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 18 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Luka Doncic Injury Update: Is He Playing? Latest Status and Injury History</title>
+      <link>https://nba-grid.com/blog/luka-doncic-injury/</link>
+      <guid isPermaLink="true">https://nba-grid.com/blog/luka-doncic-injury/</guid>
+      <pubDate>Sat, 21 Nov 2026 17:00:00 GMT</pubDate>
+      <description>Is Luka Doncic injured? Latest status after his Nov. 11 ankle sprain and back tightness, games missed this season, and his full injury history with the Lakers and Mavs.</description>
+      <enclosure url="https://nba-grid.com/assets/images/luka-doncic-games-played-by-season.jpg" type="image/jpeg" length="0"/>
+    </item>
     <item>
       <title>Dylan Harper Injury Update: Spurs Guard Ruled Out After Slipping vs. Pistons</title>
       <link>https://nba-grid.com/blog/dylan-harper-injury/</link>
@@ -158,14 +166,6 @@
       <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
       <description>A full recap of the 2026 NBA Playoffs: the Spurs' Game 7 upset of the top-seeded Thunder, the Knicks' run through the East, and the Finals result.</description>
       <enclosure url="https://nba-grid.com/assets/images/msg-court-playoffs.jpg" type="image/jpeg" length="0"/>
-    </item>
-    <item>
-      <title>NBA Power Rankings: Week 4 of the 2026-27 Season</title>
-      <link>https://nba-grid.com/blog/nba-power-rankings-2026-27/</link>
-      <guid isPermaLink="true">https://nba-grid.com/blog/nba-power-rankings-2026-27/</guid>
-      <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
-      <description>NBA power rankings, Week 4: the Spurs take No. 1 on a 10-game win streak, the Rockets and Lakers follow, and the champion Knicks slide to 14th.</description>
-      <enclosure url="https://nba-grid.com/assets/images/nba-power-rankings-action.jpg" type="image/jpeg" length="0"/>
     </item>
   </channel>
 </rss>
