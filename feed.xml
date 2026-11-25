@@ -6,7 +6,15 @@
     <description>NBA news, injuries, trades, matchup hubs, guides and daily NBA puzzles.</description>
     <language>en-us</language>
     <atom:link href="https://nba-grid.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 21 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Top 5 Shooting Guards of All Time in NBA History</title>
+      <link>https://nba-grid.com/blog/top-5-shooting-guards-of-all-time/</link>
+      <guid isPermaLink="true">https://nba-grid.com/blog/top-5-shooting-guards-of-all-time/</guid>
+      <pubDate>Tue, 24 Nov 2026 17:00:00 GMT</pubDate>
+      <description>The top 5 shooting guards of all time: Michael Jordan, Kobe Bryant, Jerry West, Dwyane Wade and James Harden, ranked with career stats, titles, MVPs and All-NBA picks.</description>
+      <enclosure url="https://nba-grid.com/assets/images/shooting-guards-all-nba-first-team-chart.jpg" type="image/jpeg" length="0"/>
+    </item>
     <item>
       <title>Luka Doncic Injury Update: Is He Playing? Latest Status and Injury History</title>
       <link>https://nba-grid.com/blog/luka-doncic-injury/</link>
@@ -158,14 +166,6 @@
       <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
       <description>Every major 2026 NBA free agency move: LeBron James to Philadelphia, Giannis Antetokounmpo to Miami, and every other big signing of the offseason.</description>
       <enclosure url="https://nba-grid.com/assets/images/nba-free-agency-huddle.jpg" type="image/jpeg" length="0"/>
-    </item>
-    <item>
-      <title>2026 NBA Playoffs Recap: The Bracket, the Upset, the Champion</title>
-      <link>https://nba-grid.com/blog/nba-playoffs-2026-recap/</link>
-      <guid isPermaLink="true">https://nba-grid.com/blog/nba-playoffs-2026-recap/</guid>
-      <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
-      <description>A full recap of the 2026 NBA Playoffs: the Spurs' Game 7 upset of the top-seeded Thunder, the Knicks' run through the East, and the Finals result.</description>
-      <enclosure url="https://nba-grid.com/assets/images/msg-court-playoffs.jpg" type="image/jpeg" length="0"/>
     </item>
   </channel>
 </rss>
