@@ -32,6 +32,9 @@ jobs:
       - name: Generate NBA Today
         run: node scripts/generate-nba-today.js
 
+      - name: Refresh NBA Connections past-puzzle links
+        run: node scripts/nba-connections/build.js
+
       - name: Sync sitemap lastmod
         run: node scripts/sync-sitemap-lastmod.js
 
@@ -39,10 +42,10 @@ jobs:
         run: |
           git config user.name "nba-grid-bot"
           git config user.email "actions@users.noreply.github.com"
-          if git diff --quiet -- blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html nba-today/index.html sitemap.xml; then
+          if git diff --quiet -- blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html nba-today/index.html nba-connections/index.html sitemap.xml; then
             echo "No schedule or standings changes today."
           else
-            git add blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html nba-today/index.html sitemap.xml
+            git add blog/nba-fantasy-schedule-grid/index.html nba-standings/index.html nba-today/index.html nba-connections/index.html sitemap.xml
             git commit -m "chore: nightly NBA schedule grid, standings and NBA Today update"
             git push
           fi

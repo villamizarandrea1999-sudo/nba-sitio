@@ -223,6 +223,10 @@ ${analytics}
 <link rel="alternate" hreflang="en-us" href="${URL}"/>
 <link rel="alternate" hreflang="x-default" href="${URL}"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png"/>
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png"/>
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}"/>
 <link rel="canonical" href="${URL}"/>

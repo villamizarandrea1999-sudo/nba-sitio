@@ -7,7 +7,22 @@ const ROOT = path.resolve(__dirname, '../..');
 const URL = 'https://nba-grid.com/nba-connections/';
 const IMG = '/assets/images/nba-connections-daily-puzzle.jpg';
 
+// Past 7 puzzles as static links (works without JavaScript). Day numbers use US Eastern time, because the
+// nightly GitHub Action rebuilds this page just after midnight ET; script.js then relabels them in the player's local date.
+function pastList() {
+  const et = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  const today = Math.round((Date.UTC(et.getFullYear(), et.getMonth(), et.getDate()) - Date.UTC(2026, 0, 1)) / 86400000) + 1;
+  const out = [];
+  for (let n = today - 1; n >= Math.max(1, today - 7); n--) {
+    const d = new Date(Date.UTC(2026, 0, n));
+    const label = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: 'UTC' });
+    out.push(`<li><a class="text-primary underline" href="/nba-connections/?day=${n}#play">NBA Connections #${String(n).padStart(3, '0')}</a> · ${label}</li>`);
+  }
+  return out.join('\n');
+}
+
 async function image() {
+  if (fs.existsSync(path.join(ROOT, IMG.slice(1)))) return; // made once; the nightly Action has no sharp
   const sharp = require('sharp');
   const W = 1280, H = 720, F = 'font-family="Arial, Helvetica, sans-serif"';
   const cols = ['#f0d24a', '#6fcf64', '#6f97ec', '#a875f0'];
@@ -75,7 +90,9 @@ ${H2('NBA Connections Tips & Strategy')}
 
 ${H2('Past NBA Connections Puzzles')}
 <p>Missed a day? Replay any of the last seven puzzles. Past puzzles don't count toward your streak.</p>
-<ul id="grid-past" class="list-disc pl-lg space-y-1 text-on-surface-variant"></ul>
+<ul id="grid-past" class="list-disc pl-lg space-y-1 text-on-surface-variant">
+${pastList()}
+</ul>
 <noscript><p>Turn on JavaScript to play today's puzzle and past puzzles.</p></noscript>
 
 ${H2('Frequently Asked Questions')}
@@ -86,6 +103,7 @@ ${faqs.map(([q, ans]) => `<div><h3 class="font-headline-md text-[18px] mb-1">${e
 ${H2('More NBA Games')}
 <ul class="list-disc pl-lg space-y-2 text-on-surface-variant">
 <li>${int('/blog/nba-immaculate-grid/#play', 'NBA 3x3 Grid (Immaculate Grid basketball)')}: name a player for every team, award and stat square.</li>
+<li>${int('/nba-today/', 'NBA Today')}: tonight's games, last night's scores and the standings.</li>
 <li>${int('/', 'NBA GRID homepage')}: today's puzzle plus the latest NBA news, trades and injury updates.</li>
 </ul>`;
 
