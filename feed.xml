@@ -6,7 +6,15 @@
     <description>NBA news, injuries, trades, matchup hubs, guides and daily NBA puzzles.</description>
     <language>en-us</language>
     <atom:link href="https://nba-grid.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 24 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 17:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Wilson NBA Forge Basketball: Forge vs. Forge Plus vs. Forge Pro</title>
+      <link>https://nba-grid.com/blog/wilson-nba-forge-basketball/</link>
+      <guid isPermaLink="true">https://nba-grid.com/blog/wilson-nba-forge-basketball/</guid>
+      <pubDate>Wed, 25 Nov 2026 17:00:00 GMT</pubDate>
+      <description>Wilson NBA Forge basketball guide: specs, prices and the real differences between the Forge, Forge Plus and Forge Pro, plus which one to buy for outdoor courts.</description>
+      <enclosure url="https://nba-grid.com/assets/images/wilson-nba-forge-basketball-prices.jpg" type="image/jpeg" length="0"/>
+    </item>
     <item>
       <title>Top 5 Shooting Guards of All Time in NBA History</title>
       <link>https://nba-grid.com/blog/top-5-shooting-guards-of-all-time/</link>
@@ -158,14 +166,6 @@
       <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
       <description>The complete 2026 NBA Finals schedule and results: dates, scores and how the Knicks beat the Spurs 4-1 to win their first title in 53 years.</description>
       <enclosure url="https://nba-grid.com/assets/images/nba-finals-schedule-court.jpg" type="image/jpeg" length="0"/>
-    </item>
-    <item>
-      <title>2026 NBA Free Agency Tracker: Every Major Move</title>
-      <link>https://nba-grid.com/blog/nba-free-agency-2026/</link>
-      <guid isPermaLink="true">https://nba-grid.com/blog/nba-free-agency-2026/</guid>
-      <pubDate>Sat, 12 Sep 2026 17:00:00 GMT</pubDate>
-      <description>Every major 2026 NBA free agency move: LeBron James to Philadelphia, Giannis Antetokounmpo to Miami, and every other big signing of the offseason.</description>
-      <enclosure url="https://nba-grid.com/assets/images/nba-free-agency-huddle.jpg" type="image/jpeg" length="0"/>
     </item>
   </channel>
 </rss>
