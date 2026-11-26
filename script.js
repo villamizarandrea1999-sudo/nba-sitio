@@ -127,7 +127,11 @@ function gridLocalDateKey(d) {
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 }
 const gridNow = new Date();
-const gridDayNo = Math.max(1, Math.round((Date.UTC(gridNow.getFullYear(), gridNow.getMonth(), gridNow.getDate()) - Date.UTC(2026, 0, 1)) / 86400000) + 1);
+const gridTodayNo = Math.max(1, Math.round((Date.UTC(gridNow.getFullYear(), gridNow.getMonth(), gridNow.getDate()) - Date.UTC(2026, 0, 1)) / 86400000) + 1);
+// Past puzzles: /nba-connections/?day=N replays an earlier day (archive plays don't touch the streak)
+const gridReqDay = parseInt(new URLSearchParams(location.search).get('day'), 10);
+const gridIsArchive = Number.isInteger(gridReqDay) && gridReqDay >= 1 && gridReqDay < gridTodayNo;
+const gridDayNo = gridIsArchive ? gridReqDay : gridTodayNo;
 const gridCategories = gridPuzzles[(gridDayNo - 1) % gridPuzzles.length].map(([name, items], i) => (
     { id: i + 1, name, className: `grid-cat-${i + 1}`, items }
 ));
@@ -145,6 +149,20 @@ const correctCountEl = document.getElementById('grid-correct-count');
 const streakCountEl = document.getElementById('grid-streak-count');
 const puzzleNoEl = document.getElementById('grid-puzzle-no');
 
+// Past 7 puzzles, listed on /nba-connections/ (#grid-past) with dates in the player's local calendar
+(function () {
+    const pastEl = document.getElementById('grid-past');
+    if (!pastEl) return;
+    const items = [];
+    if (gridIsArchive) items.push('<li><a class="text-primary underline" href="/nba-connections/#play">Back to today\'s puzzle</a></li>');
+    for (let n = gridTodayNo - 1; n >= Math.max(1, gridTodayNo - 7); n--) {
+        const d = new Date(gridNow.getFullYear(), gridNow.getMonth(), gridNow.getDate() - (gridTodayNo - n));
+        const label = d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+        items.push(`<li><a class="text-primary underline" href="/nba-connections/?day=${n}#play">NBA Connections #${String(n).padStart(3, '0')}</a> · ${label}</li>`);
+    }
+    pastEl.innerHTML = items.join('');
+})();
+
 if (gridEl) {
     let selected = [];
     let mistakesLeft = 4;
@@ -155,10 +173,11 @@ if (gridEl) {
     // Puzzle number follows the same local date that picked today's puzzle
     const todayKey = gridLocalDateKey(gridNow);
     const puzzleNo = gridDayNo;
-    if (puzzleNoEl) puzzleNoEl.textContent = `GRID #${String(puzzleNo).padStart(3, '0')}`;
+    if (puzzleNoEl) puzzleNoEl.textContent = `GRID #${String(puzzleNo).padStart(3, '0')}${gridIsArchive ? ' · PAST PUZZLE' : ''}`;
 
     // Daily streak tracking (localStorage)
     function updateStreak(won) {
+        if (gridIsArchive) return;
         const data = JSON.parse(localStorage.getItem('nbagrid-streak') || '{}');
         if (data.lastPlayed === todayKey) {
             if (streakCountEl) streakCountEl.textContent = data.current || 0;
@@ -224,7 +243,7 @@ if (gridEl) {
 
     function buildShareText(won) {
         const emojiRows = guessLog.map(row => row.map(ok => (ok ? '🟩' : '🟥')).join('')).join('\n');
-        return `NBA GRID #${String(puzzleNo).padStart(3, '0')} ${won ? correctCount + '/4' : 'X/4'}\n${emojiRows}\nnba-grid.com`;
+        return `NBA GRID #${String(puzzleNo).padStart(3, '0')} ${won ? correctCount + '/4' : 'X/4'}\n${emojiRows}\nnba-grid.com/nba-connections/`;
     }
 
     function endGame(message, won) {
